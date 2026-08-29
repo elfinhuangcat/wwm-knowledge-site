@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="燕云十六声玩家日课、周修与月度活动清单。">
+  <meta name="theme-color" content="#176b5b">
+  <title>燕云行笺 · 玩家知识站</title>
+  <link rel="icon" type="image/png" href="assets/cat-goose-logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#checklist" aria-label="燕云行笺首页"><img src="assets/cat-goose-logo.png" alt="" width="44" height="44"><span><strong>燕云行笺</strong><small>玩家知识站</small></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">菜单</button>
+    <nav id="main-nav" aria-label="主导航">
+      <a class="active" href="#checklist">日课周修</a><a href="#must-do">不可错过</a><a href="#guild">百业101</a><a href="#events">游戏活动</a><a href="#knowledge">百科查阅</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="checklist" class="page active" aria-labelledby="checklist-title">
+      <div class="page-heading">
+        <div><p class="eyebrow">今日江湖备忘</p><h1 id="checklist-title">日课周修</h1><p>按你的养成目标排出优先顺序，完成状态仅保存在当前设备。</p></div>
+        <div class="reset-note"><span id="beijing-time">北京时间</span><small id="next-reset">正在计算下次重置</small></div>
+      </div>
+
+      <div class="toolbar" aria-label="筛选与搜索">
+        <label>养成目标<select id="goal-filter"><option value="all">全部</option><option value="role">角色养成</option><option value="pvp">PVP养成</option><option value="cosmetic">外观收集</option></select></label>
+        <label>百业活跃<select id="guild-filter"><option value="all">全部</option><option value="yes">是</option><option value="no">否</option></select></label>
+        <label>优先级<select id="priority-filter"><option value="all">全部</option><option value="高">高</option><option value="中">中</option><option value="低">低</option></select></label>
+        <label class="search-label">想要的奖励<input id="search" type="search" placeholder="输入奖励名称…"><span class="quick-search" aria-label="常用奖励"><button type="button">心法</button><button type="button">长鸣玉</button><button type="button">装备</button><button type="button">通宝</button><button type="button">外观</button><button type="button">袅袅之音</button><button type="button">武学</button><button type="button">奇术</button></span></label>
+        <label class="toggle"><input id="hide-completed" type="checkbox">隐藏已完成</label>
+      </div>
+
+      <div class="period-tabs" role="tablist" aria-label="活动频度">
+        <button role="tab" aria-selected="true" data-period="Daily">每日 <span id="daily-count"></span></button>
+        <button role="tab" aria-selected="false" data-period="Recurring">每周 / 每月 <span id="recurring-count"></span></button>
+      </div>
+      <div class="progress-row"><div><strong id="progress-label">今日进度</strong><span id="progress-text"></span></div><div class="progress-track" aria-hidden="true"><i id="progress-bar"></i></div></div>
+      <div id="activity-list" class="activity-list" aria-live="polite"></div>
+      <p id="empty-state" class="empty" hidden>没有符合当前筛选条件的活动。</p>
+    </section>
+
+    <section id="must-do" class="page" aria-labelledby="must-title"><div class="page-heading"><div><p class="eyebrow">一次性重要奖励</p><h1 id="must-title">不可错过</h1><p>用于收录错过后难以补领的任务与奖励。</p></div></div><div class="notice"><strong>内容待补充</strong><p>当前工作簿尚未包含一次性奖励资料。后续可在独立数据文件中添加，无需修改页面结构。</p></div></section>
+    <section id="guild" class="page" aria-labelledby="guild-title"><div class="page-heading"><div><p class="eyebrow">新人入门</p><h1 id="guild-title">百业101</h1><p>快速了解百业玩法、活跃度来源与每周安排。</p></div></div><div class="notice"><strong>先从清单开始</strong><p>在「日课周修」筛选带“百业活跃”标记的活动。完整新人指南将在资料补充后呈现于此。</p></div></section>
+    <section id="events" class="page" aria-labelledby="events-title"><div class="page-heading"><div><p class="eyebrow">限时内容</p><h1 id="events-title">游戏活动</h1><p>开发者更新活动数据后，周期活动可同步进入周修清单。</p></div></div><div class="notice"><strong>暂无进行中的录入活动</strong><p>此区域已预留；活动数据将与日常清单保持分离，便于持续维护。</p></div></section>
+    <section id="knowledge" class="page knowledge-layout" aria-labelledby="knowledge-title">
+      <aside class="knowledge-tree"><h2>百科目录</h2><button class="tree-item active" data-article="energy">养成策略 <span>›</span></button><button class="tree-child active" data-article="energy">心力消耗策略</button><button class="tree-child" data-article="craft">天工知识</button></aside>
+      <article id="knowledge-article"><p class="eyebrow">养成策略</p><h1 id="knowledge-title">心力消耗策略</h1><p>心力溢出会造成资源浪费，建议优先安排消耗心力的玩法。以下为原始知识图。</p><img src="assets/心力消耗策略.png" alt="心力消耗策略知识图" loading="lazy"></article>
+    </section>
+  </main>
+
+  <footer>Unofficial fan-made guide. Where Winds Meet and related game assets are property of NetEase/Everstone Studio. This site is not affiliated with or endorsed by NetEase.</footer>
+  <script src="data/activities.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
