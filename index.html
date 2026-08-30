@@ -25,11 +25,13 @@
         <div class="reset-note"><span id="beijing-time">北京时间</span><small id="next-reset">正在计算下次重置</small></div>
       </div>
 
+      <div class="goal-control">
+        <div><span class="goal-label">养成目标</span><span class="info-tip" tabindex="0" role="img" aria-label="优先级将按照所选养成目标显示和排序" data-tooltip="优先级将按照所选养成目标显示和排序">?</span><small>选择你当前最关注的成长方向</small></div>
+        <select id="goal-filter" aria-label="选择养成目标"><option value="role">角色养成</option><option value="pvp">PVP养成</option><option value="cosmetic">外观收集</option></select>
+      </div>
+
       <div class="toolbar" aria-label="筛选与搜索">
-        <label>养成目标<select id="goal-filter"><option value="role">角色养成</option><option value="pvp">PVP养成</option><option value="cosmetic">外观收集</option></select></label>
-        <label>百业活跃<select id="guild-filter"><option value="all">全部</option><option value="yes">是</option><option value="no">否</option></select></label>
         <label>优先级<select id="priority-filter"><option value="all">全部</option><option value="高">高</option><option value="中">中</option><option value="低">低</option></select></label>
-        <label>排序<select id="sort-select"><option value="default">推荐顺序</option><option value="completion-asc">未完成优先</option><option value="completion-desc">已完成优先</option><option value="priority-asc">优先级：高到低</option><option value="priority-desc">优先级：低到高</option><option value="time-asc">用时：短到长</option><option value="time-desc">用时：长到短</option><option value="category-asc">类别：正序</option><option value="category-desc">类别：倒序</option><option value="name-asc">活动：正序</option><option value="name-desc">活动：倒序</option></select></label>
         <label class="search-label">想要的奖励<input id="search" type="search" placeholder="输入奖励名称…"><span class="quick-search" aria-label="常用奖励"><button type="button">心法</button><button type="button">长鸣玉</button><button type="button">装备</button><button type="button">通宝</button><button type="button">外观</button><button type="button">袅袅之音</button><button type="button">武学</button><button type="button">奇术</button></span></label>
         <label class="toggle"><input id="hide-completed" type="checkbox">隐藏已完成</label>
       </div>

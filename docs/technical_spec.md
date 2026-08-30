@@ -44,3 +44,14 @@ Each following section describe main feature's specification.
   - Monthly activity status should be reset on the 1st day of a month, 5AM in Beijing timezone.
   - Weekly activity status reset on each Monday 5AM, Beijing timezone.
   - Daily activity status reset on each day 5AM, Beijing timezone.
+- UX details on sorters and filters:
+  - The "Goal" selection should be displayed above the checklist tables, and have a tool tip indicating the priority will be sorted by the selected goal. This selector should not be visually same as other filter/sorter as it is a different function.
+  - Display the following sorters and filters also above the tables:
+    - Priority "优先级" (filter)
+    - Filter by reward
+    - Toggle to hide or show completed tasks.
+  - In the tables, allow sorting following columns by adding sort icon next to column name:
+    - 类别
+    - 优先级
+    - 用时
+    - Completion status
