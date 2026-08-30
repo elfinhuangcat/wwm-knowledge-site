@@ -1,0 +1,46 @@
+# Technical Specifications
+Each following section describe main feature's specification.
+## 日课周修 specifications
+- They should be displayed in the same page as 2 tabular checklist (weekly and monthly combined into one). They should be sortable/filterable tables with check mark enabled for users to check an activity as completed for today / this week / this month.
+- Users should be able to sort the table by Goals:
+  - Goals:
+    - 角色养成
+    - PVP养成
+    - 外观收集
+  - For example, if I choose to sort the table by "外观收集", then the column “优先级” should display the data come from 外观收集优先度.
+- Users should be able to sort the table by following categories:
+  - 优先级 
+    - This 优先级 is the value of selected goal. For exmaple, if the user chose the goal "角色养成", this value should come from "角色养成优先级".
+    - By default should be displayed as descending order:
+      - 高
+      - 中
+      - 低
+  - 单次花费时间
+    - By default should be sorted into ascending order:
+      - 极低
+      - 低
+      - 中
+      - 高
+      - 不定，通常久
+    - The time annotated to the level can be displayed in a grey color while the level itself should be more explicit.
+  - 活动类别
+- Users should be able to filter the table by inputting reward item they desire in a text input box. Please provide the following quick, frequently used terms under the text input box for them to quickly search without typing:
+  - 心法
+  - 长鸣玉
+  - 装备
+  - 通宝
+  - 外观
+  - 袅袅之音
+  - 武学
+  - 奇术
+- Each table should by default be displayed with a sorted order by the following order:
+    - Incompleted activities first
+    - 优先度 in descending order
+    - 活动类别
+- Activities can have multiple rewards.
+- Users can mark activities completed and choose to hide completed activities.
+- Users can sort by activity completion status.
+- Monthly/daily/weekly completion resets:
+  - Monthly activity status should be reset on the 1st day of a month, 5AM in Beijing timezone.
+  - Weekly activity status reset on each Monday 5AM, Beijing timezone.
+  - Daily activity status reset on each day 5AM, Beijing timezone.

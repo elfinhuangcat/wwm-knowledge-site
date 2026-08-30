@@ -1,0 +1,6 @@
+- 心力消耗策略.png
+  - Credit to: 童聪 (https://space.bilibili.com/456111385)
+  - Source: https://www.bilibili.com/video/BV1vdr5BiE5j/
+- 天工知识.png
+  - Credit to: 林恩恩恩恩恩恩 (https://space.bilibili.com/431593381)
+  - Source: https://www.bilibili.com/video/BV1u6sKz2Efc
