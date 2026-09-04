@@ -34,9 +34,47 @@ $('#priority-filter').addEventListener('change',e=>{state.priority=e.target.valu
 $('#search').addEventListener('input',e=>{state.search=e.target.value.trim().toLowerCase();$$('.quick-search button').forEach(b=>b.classList.toggle('active',b.textContent===e.target.value));render()});
 $('#hide-completed').addEventListener('change',e=>{state.hide=e.target.checked;render()});
 $$('.quick-search button').forEach(b=>b.addEventListener('click',()=>{$('#search').value=$('#search').value===b.textContent?'':b.textContent;state.search=$('#search').value.toLowerCase();$$('.quick-search button').forEach(x=>x.classList.toggle('active',x===b&&!!state.search));render()}));
-function route(){const id=location.hash.slice(1)||'checklist';$$('.page').forEach(x=>x.classList.toggle('active',x.id===id));$$('nav a').forEach(x=>x.classList.toggle('active',x.hash==='#'+id));$('#main-nav').classList.remove('open');$('.menu-toggle').setAttribute('aria-expanded','false')}
+function route(){const [requestedPage,requestedArticle]=location.hash.slice(1).split('/'),id=document.getElementById(requestedPage)?requestedPage:'checklist';$$('.page').forEach(x=>x.classList.toggle('active',x.id===id));$$('#main-nav a').forEach(x=>x.classList.toggle('active',x.hash==='#'+id));if(id==='knowledge')renderKnowledge(articles[requestedArticle]?requestedArticle:'energy');if(id==='guild')renderGuild(['activity','perks'].includes(requestedArticle)?requestedArticle:'activity');$('#main-nav').classList.remove('open');$('.menu-toggle').setAttribute('aria-expanded','false')}
 window.addEventListener('hashchange',route);$('.menu-toggle').addEventListener('click',e=>{const open=$('#main-nav').classList.toggle('open');e.currentTarget.setAttribute('aria-expanded',open)});
-const articles={energy:{category:'养成策略',title:'心力消耗策略',text:'心力溢出会造成资源浪费，建议优先安排消耗心力的玩法。以下为原始知识图。',img:'assets/百科查阅/养成策略/心力消耗策略.png',author:'童聪',authorUrl:'https://space.bilibili.com/456111385',source:'https://www.bilibili.com/video/BV1vdr5BiE5j/'},craft:{category:'百科知识',title:'天工知识',text:'天工相关资料与速查说明。以下为原始知识图。',img:'assets/百科查阅/养成策略/天工知识.png',author:'林恩恩恩恩恩恩',authorUrl:'https://space.bilibili.com/431593381',source:'https://www.bilibili.com/video/BV1u6sKz2Efc'}};
-$$('[data-article]').forEach(b=>b.addEventListener('click',()=>{const a=articles[b.dataset.article];$$('.tree-child').forEach(x=>x.classList.toggle('active',x.dataset.article===b.dataset.article));$('#knowledge-article').innerHTML=`<p class="eyebrow">${a.category}</p><h1>${a.title}</h1><p>${a.text}</p><figure><img src="${a.img}" alt="${a.title}知识图" loading="lazy"><figcaption>作者：<a href="${a.authorUrl}" target="_blank" rel="noopener noreferrer">${a.author}</a> · <a href="${a.source}" target="_blank" rel="noopener noreferrer">查看来源</a></figcaption></figure>`}));
+const shopRows=[
+['赛季商店（不肝商店） - 赛季追赶','通宝','每周刷新','image20.png','长期每周必买'],
+['赛季商店-战斗养成','啸玉 （当前阶的叠音材料）','每周刷新，剩余库存不清空','image10.png','长期每周必买'],
+['赛季商店-战斗养成','金丝钱袋（通宝）','每周刷新','image23.png','清空体力的主要方式'],
+['赛季商店-战斗养成','一盒短陌钱','每周刷新','image12.png','后期如果斗蛐蛐，开封跑商的话不需要买'],
+['赛季商店-战斗养成','心法箱子','每周刷新','image21.png','长期每周必买'],
+['赛季商店-战斗养成','武学心得','每周刷新','image19.png','长期每周必买'],
+['赛季商店-战斗养成','奇术支援箱','每周刷新','image15.png','不想肝奇术升级'],
+['赛季商店-装备宝匣','当前阶的装备匣','每周刷新','image3.png','么玉充足，缺装备的时候'],
+['赛季商店-金装兑换','当前阶的转律石','每周刷新','image14.png','长期每周必买'],
+['赛季商店-金装兑换','当前阶的金妙音石','每周刷新','image16.png','长期每周必买'],
+['赛季商店-金装兑换','当前阶的金装自选匣','每周补货，有库存上限','image4.png','能买就买'],
+['赛季商店-营生养成','营生手记','每周刷新','image13.png','能买就买，需要提升悬壶/文士的等级来解锁高阶的药品/符帖来提升战斗能力。'],
+['赛季商店-外观兑换','袅袅之音','每周刷新','image5.png','度过新手期，买完易水歌之后，可以开始买。'],
+['社交商店-江湖行商店','当前阶的止戈定音石','每周刷新','image27.png','按需购买。不玩止戈(pvp)或者百业战可以忽略。'],
+['社交商店-江湖行商店','当前阶的止戈变音石','每周刷新','image11.png','按需购买。不玩止戈(pvp)或者百业战可以忽略。'],
+['百业-赤金小铺','绕梁之音','每月刷新','image2.png','不换白不换，可以抽外观。'],
+['传承商店','奇术支援箱','每周刷新','image29.png','长期每周必买'],
+['传承商店','当前阶的变音石','每周补货，剩余库存不清空','image22.png','长期每周必买'],
+['传承商店','心法箱子','每周刷新','image8.png','长期每周必买'],
+['不错小店','通宝','每周刷新','image25.png','缺通宝可以买'],
+['战令商店','当前阶的转律石','每周刷新','image24.png','长期每周必买。注意看准描述是几阶的，别买错了（痛的教训）。因为战令商店所有转律石都有，乱序的。'],
+['战令商店','当前阶的变音石','每周刷新','image18.png','同上'],
+['战令商店','奇术支援箱','每周刷新','image7.png','长期每周必买'],
+['战令商店','不错鸟羽','每期战令刷新','image17.png','建议买。可以到不错小店兑换外观，通宝。'],
+['战令商店','等级上限帖','每期战令刷新','image6.png','只有购买了战令的才有意义买。'],
+['商店->精选->礼包','通宝','每周刷新','image26.png','免费，记得领'],
+['商店->精选->道具->江湖百珍','袅袅之音','每周刷新','image30.png','度过新手期，买完易水歌之后，可以开始买。'],
+['商店->和鸣->天精商店','袅袅之音','没有库存限制','image9.png','需要消耗天精。天精是和鸣消耗袅袅之音抽外观时会获得的。'],
+['商店->和鸣->地华商店','袅袅之音','每月刷新','image1.png','需要消耗地华。地华是和鸣消耗绕梁之音抽普通外观获得的。'],
+['商店->和鸣->地华商店','折音券','每月刷新','image28.png','需要消耗地华。地华是和鸣消耗绕梁之音抽普通外观获得的。如果你需要用长鸣珠（充值/氪金）买外观，有券在手，花钱更少。']
+];
+function shopTable(){return `<div class="shop-table-wrap"><table class="shop-table"><thead><tr><th>商店</th><th>物品</th><th>刷新频率</th><th>图标</th><th>备注</th></tr></thead><tbody>${shopRows.map(r=>`<tr><td>${escapeHtml(r[0])}</td><td><strong>${escapeHtml(r[1])}</strong></td><td>${escapeHtml(r[2])}</td><td><img src="assets/百科查阅/养成策略/商店必买攻略/${r[3]}" alt="${escapeHtml(r[1])}图标" loading="lazy"></td><td>${escapeHtml(r[4])}</td></tr>`).join('')}</tbody></table></div>`}
+const articles={energy:{category:'养成策略',title:'心力消耗策略',text:'心力溢出会造成资源浪费，建议优先安排消耗心力的玩法。以下为原始知识图。',img:'assets/百科查阅/养成策略/心力消耗策略.png',author:'童聪',authorUrl:'https://space.bilibili.com/456111385',source:'https://www.bilibili.com/video/BV1vdr5BiE5j/'},craft:{category:'百科知识',title:'天工知识',text:'天工相关资料与速查说明。以下为原始知识图。',img:'assets/百科查阅/养成策略/天工知识.png',author:'林恩恩恩恩恩恩',authorUrl:'https://space.bilibili.com/431593381',source:'https://www.bilibili.com/video/BV1u6sKz2Efc'},shop:{category:'养成策略',title:'每周商店必买攻略',text:'不知道什么该买？萌新们可以参考这个必买攻略，确保自己至少每个该买的商店都逛过了 😀。商店里面其他物品可以按需购买。',table:true}};
+function renderKnowledge(key){const a=articles[key];$$('#knowledge .tree-child[data-article]').forEach(x=>x.classList.toggle('active',x.dataset.article===key));$('#knowledge-article').innerHTML=`<p class="eyebrow">${a.category}</p><h1>${a.title}</h1><p>${a.text}</p>${a.table?shopTable():`<figure><img src="${a.img}" alt="${a.title}知识图" loading="lazy"><figcaption>作者：<a href="${a.authorUrl}" target="_blank" rel="noopener noreferrer">${a.author}</a> · <a href="${a.source}" target="_blank" rel="noopener noreferrer">查看来源</a></figcaption></figure>`}`}
+function navigate(page,article){const hash=`#${page}/${article}`;location.hash===hash?route():location.hash=hash}
+function renderGuild(key){$$('[data-guild-panel]').forEach(x=>x.classList.toggle('active',x.dataset.guildPanel===key));$$('[data-guild-article]').forEach(x=>x.classList.toggle('active',x.dataset.guildArticle===key));window.scrollTo({top:0,behavior:'auto'})}
+$$('[data-article]').forEach(b=>b.addEventListener('click',()=>navigate('knowledge',b.dataset.article)));
+$$('[data-guild-article]').forEach(b=>b.addEventListener('click',()=>navigate('guild',b.dataset.guildArticle)));
+$$('[data-must-article]').forEach(b=>b.addEventListener('click',()=>navigate('must-do',b.dataset.mustArticle)));
 route();render();clock();setInterval(()=>{clock();if(state.period==='Limited')render()},60000);
 })();

@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#176b5b">
   <title>燕云行笺 · 玩家知识站</title>
   <link rel="icon" type="image/png" href="assets/cat-goose-logo.png">
-  <link rel="stylesheet" href="styles.css?v=20260903-2">
+  <link rel="stylesheet" href="styles.css?v=20260904">
 </head>
 <body>
   <header class="site-header">
@@ -46,29 +46,57 @@
       <p id="empty-state" class="empty" hidden>没有符合当前筛选条件的活动。</p>
     </section>
 
-    <section id="must-do" class="page" aria-labelledby="must-title"><div class="page-heading"><div><p class="eyebrow">一次性重要奖励</p><h1 id="must-title">不可错过</h1><p>用于收录错过后难以补领的任务与奖励。</p></div></div><div class="notice"><strong>内容待补充</strong><p>当前工作簿尚未包含一次性奖励资料。后续可在独立数据文件中添加，无需修改页面结构。</p></div></section>
-    <section id="guild" class="page" aria-labelledby="guild-title">
-      <div class="page-heading"><div><p class="eyebrow">新人入门</p><h1 id="guild-title">百业101</h1><p>快速刷活跃、积累千奇珏，并把百业技艺点在真正有用的地方。</p></div></div>
-      <div class="pdf-library">
-        <article class="pdf-document">
-          <div class="pdf-document-heading"><div><span class="guide-number">01</span><h2>百业活跃度 / 千奇珏速刷指南</h2></div><a class="pdf-link" href="pages/百业101/WWM%20Guild%20Activity%20Completion%20Guide.pdf" target="_blank" rel="noopener noreferrer">在新窗口打开 PDF ↗</a></div>
-          <iframe class="pdf-viewer" src="pages/百业101/WWM%20Guild%20Activity%20Completion%20Guide.pdf#view=FitH" title="百业活跃度与千奇珏速刷指南 PDF" loading="lazy"></iframe>
+    <section id="must-do" class="page content-layout" aria-labelledby="must-title">
+      <aside class="knowledge-tree"><h2>不可错过目录</h2><button class="tree-item active" data-must-article="hexi-glass">河西奇珍 <span>›</span></button><button class="tree-child active" data-must-article="hexi-glass">五色琉璃彩</button></aside>
+      <article id="must-article" class="article-content">
+        <p class="eyebrow">河西奇珍</p><h1 id="must-title">河西五色琉璃彩</h1>
+        <p class="reward-callout"><strong>主要奖励：</strong>10个心法书页，需要200个五色琉璃彩兑换。</p>
+        <h2>如何收集</h2><p>需要在河西玉门关地图白天，出现特定天气的条件下，地图会如下图出现这样的大型区域提示，这时候就可以过去采集啦。</p>
+        <figure><img src="assets/不可错过/河西五色琉璃彩/image1.png" alt="玉门关地图上的五色琉璃彩区域提示" loading="lazy"></figure>
+        <p>到达附近位置后会出现较大只，有残影的金瓯鸟。用远程武器比较容易打，它们会掉落小金堆，其中有掉落物品“五色琉璃彩”，每天获取上限99个。</p>
+        <h2>如何兑换</h2><p>到玉门关胡杨集传送点附近（见下图黑色NPC标点），找到树上的陈七七兑换。</p>
+        <figure><img src="assets/不可错过/河西五色琉璃彩/image2.png" alt="胡杨集陈七七所在位置" loading="lazy"></figure>
+        <p>可以兑换的物品如下图（心法箱子需要200个琉璃彩兑换完成）：</p>
+        <figure><img src="assets/不可错过/河西五色琉璃彩/image3.png" alt="五色琉璃彩兑换物品列表" loading="lazy"></figure>
+      </article>
+    </section>
+    <section id="guild" class="page content-layout" aria-labelledby="guild-title">
+      <aside class="knowledge-tree"><h2>百业101目录</h2><button class="tree-child active" data-guild-article="activity">百业活跃度/千奇珏速刷指南</button><button class="tree-child" data-guild-article="perks">百业技艺 - 加成攻略</button></aside>
+      <div class="guild-content">
+        <div class="page-heading"><div><p class="eyebrow">新人入门</p><h1 id="guild-title">百业101</h1><p>快速刷活跃、积累千奇珏，并把百业技艺点在真正有用的地方。</p></div></div>
+        <div class="guild-web-guides">
+        <article class="web-guide active" data-guild-panel="activity"><div class="guide-heading"><span class="guide-number">01</span><h2>百业活跃度/千奇珏速刷指南</h2></div><p class="guide-credit">以下攻略感谢燕云十六声国际服镜花阙 @夜</p><p>加入百业是为了什么？最重要的是为了获得千奇珏解锁百业提供的加成。萌新们可以参考下面的攻略快速获得千奇珏（注意所有的百业活动都是每周刷新，千奇珏没有每周获得的上限，多做多得～）。下列百业活动排序是按照最容易做的优先排序。需要速刷活跃度和获得千奇珏的可以从上到下做：</p>
+          <div class="guide-step"><h3>百业货运</h3><p>驻地中间房间NPC温无双处，提交3轮材料，没有的材料点击图标就可以在商店直接购买，也可以求助，帮别人提交材料每次也可以加10点活跃。</p><img src="assets/百业101/活跃度指南/image4.png" alt="百业货运完成界面" loading="lazy"></div>
+          <div class="guide-step"><h3>同游闲趣</h3><p>地图上找云游印记地点，进入拍十张照片即可完成（不需要提交/保存。或者在派对或联机挂机时F2选择双人动作“正经双修”，大概10分钟即可做满。</p><img src="assets/百业101/活跃度指南/image6.png" alt="同游闲趣完成界面" loading="lazy"></div>
+          <div class="guide-step"><h3>忘忧时光</h3><p>在百业驻地停留20min，可以和百业派对一起挂满。点击“百业派对”可以看见派对开始时间。</p><div class="guide-image-pair"><img src="assets/百业101/活跃度指南/image10.png" alt="忘忧时光完成界面" loading="lazy"><img src="assets/百业101/活跃度指南/image7.png" alt="百业派对完成界面" loading="lazy"></div></div>
+          <div class="guide-step"><h3>双人动作</h3><p>在百业驻地一个人在稍高的地方，譬如站灯柱上按F2选择正经双修，另一人按F交互后会因为高度差寻路失败，交互失败20次就能刷满（如果两个人都需要就交换再来一次）。派对期间可以找伙伴顺便完成。制造高度差的效果参考下图：</p><div class="guide-image-pair"><img src="assets/百业101/活跃度指南/image8.png" alt="利用灯柱制造双人动作高度差" loading="lazy"><img src="assets/百业101/活跃度指南/image5.png" alt="双人动作完成界面" loading="lazy"></div></div>
+          <div class="guide-step"><h3>破军杀将</h3><p>每周两次，可以上场打boss，不想上场右上角点观战，完成观战一场战斗再退出就算完成。</p><img src="assets/百业101/活跃度指南/image1.png" alt="破军杀将完成界面" loading="lazy"></div>
+          <div class="guide-step"><h3>一决高下</h3><p>每周两次，可以上场对决，不想上场右上角点观战，完成观战一场战斗再退出就算完成。</p><img src="assets/百业101/活跃度指南/image9.png" alt="一决高下完成界面" loading="lazy"></div>
+          <div class="guide-step"><h3>联机探索</h3><p>每周联机20min做满。如果没有可以联机探索的伙伴也可以在百业频道喊一声。</p><img src="assets/百业101/活跃度指南/image3.png" alt="联机探索完成界面" loading="lazy"></div>
+          <div class="guide-step"><h3>暴富之路</h3><p>好几种做的方法：(1)赛季商店买1000短陌钱就能完成。 (2)开封皇宫每周天梯赛斗蛐蛐。(3) 开封市卖司跑商 （具体做法可以参考攻略：<a href="https://news.17173.com/content/09152025/170601829.shtml" target="_blank" rel="noopener noreferrer">【燕云十六声】跑商攻略总结_网络游戏新闻_17173.com中国游戏门户站</a>， 注意本攻略是基于北京时间。）</p><img src="assets/百业101/活跃度指南/image2.png" alt="暴富之路完成界面" loading="lazy"></div>
         </article>
-        <article class="pdf-document">
-          <div class="pdf-document-heading"><div><span class="guide-number">02</span><h2>百业技艺 · 加成攻略</h2></div><a class="pdf-link" href="pages/百业101/WWM%20Guild%20Perks.pdf" target="_blank" rel="noopener noreferrer">在新窗口打开 PDF ↗</a></div>
-          <iframe class="pdf-viewer" src="pages/百业101/WWM%20Guild%20Perks.pdf#view=FitH" title="百业技艺加成攻略 PDF" loading="lazy"></iframe>
+        <article class="web-guide" data-guild-panel="perks"><div class="guide-heading"><span class="guide-number">02</span><h2>百业技艺 - 加成攻略</h2></div><p>加入百业其中一个重要福利就是百业技艺，可以让你在燕云战斗和探索时更加轻松。千奇珏主要通过完成百业活动获得，活动完成的状态会每周刷新，千奇珏每周获得无上限。注意，每个赛季玩家累计的千奇珏会重置，但是燕云会根据你上个赛季累计的千奇珏通过邮件形式返还。也就是说，累计越多，就是能解锁越多。</p><p>辛辛苦苦获得了很多千奇珏不知道怎么用？以下的攻略给你一个快速指南作为参考：</p>
+          <h3 class="guide-section-title">百业战技能</h3><p>哪怕你不参加百业战，也建议优先点亮以下技能到至少5级，能够给全百业提供百业战的加成（协力共助）：</p>
+          <div class="guide-step"><p><strong>基础的伤害，受伤减免，气血加成。</strong>所有参与百业战的成员请优先点满。不参与百业战的也请尽量升满。</p><img src="assets/百业101/百业技艺/image1.png" alt="百业战基础加成技能" loading="lazy"></div>
+          <div class="guide-step"><p><strong>属攻加成。</strong>参与百业战的成员优先加满自己的武学流派方向，其次可以询问百业指挥。不参与的成员尽量提升每项到5级以上。</p><img src="assets/百业101/百业技艺/image7.png" alt="百业战属攻加成技能" loading="lazy"></div>
+          <div class="guide-step"><p>根据百业战站位分配点亮对应技能：</p><img src="assets/百业101/百业技艺/image9.png" alt="按百业战站位学习不同技能" loading="lazy"></div>
+          <div class="guide-step"><p>不参与百业战的可以忽略以下部分。参与百业战的尽量点满自己武学对应的神技：</p><div class="guide-image-stack"><img src="assets/百业101/百业技艺/image8.png" alt="百业战武学神技一" loading="lazy"><img src="assets/百业101/百业技艺/image6.png" alt="百业战武学神技二" loading="lazy"><img src="assets/百业101/百业技艺/image2.png" alt="百业战武学神技三" loading="lazy"></div></div>
+          <h3 class="guide-section-title">经商致富</h3><p>需要在开封市买司跑商赚短陌钱的可以参考以下攻略：</p><div class="guide-step"><p>售卖加成和税收减免加满。注意两个perk只对在百业成员的世界卖货的时候生效。世界其他玩家按照正常的价格和税率。</p><img src="assets/百业101/百业技艺/image10.png" alt="经商售卖加成和税收减免技能" loading="lazy"></div><div class="guide-step"><p>市买背包容量升级到10级就可以了，在开封租最大的房子（60格）就可以满足需求。</p><img src="assets/百业101/百业技艺/image3.png" alt="市买背包容量技能" loading="lazy"></div>
+          <h3 class="guide-section-title">江湖探索</h3><div class="guide-step"><p><strong>众志凌霄（百业爬塔）：</strong>参与爬塔的成员请优先点满。不参与的不需要点。</p><img src="assets/百业101/百业技艺/image5.png" alt="众志凌霄技能" loading="lazy"></div><div class="guide-step"><p><strong>四海笺加成：</strong>如果经常单机自己玩，但是需要在江湖行商店买东西，缺四海笺，可以点亮四海笺加成。</p><p>一般不需要点装备修理这个，除非你装备真的烂得太快</p><img src="assets/百业101/百业技艺/image4.png" alt="四海笺加成和修理概率免费技能" loading="lazy"></div>
+          <h3 class="guide-section-title">其他</h3><p>还有其他技艺本攻略没有讲述，大家可以根据自己的需要去提升。</p>
         </article>
+        </div>
       </div>
     </section>
-    <section id="knowledge" class="page knowledge-layout" aria-labelledby="knowledge-title">
-      <aside class="knowledge-tree"><h2>百科目录</h2><button class="tree-item active" data-article="energy">养成策略 <span>›</span></button><button class="tree-child active" data-article="energy">心力消耗策略</button><button class="tree-child" data-article="craft">天工知识</button></aside>
-      <article id="knowledge-article"><p class="eyebrow">养成策略</p><h1 id="knowledge-title">心力消耗策略</h1><p>心力溢出会造成资源浪费，建议优先安排消耗心力的玩法。以下为原始知识图。</p><figure><img src="assets/百科查阅/养成策略/心力消耗策略.png" alt="心力消耗策略知识图" loading="lazy"><figcaption>作者：<a href="https://space.bilibili.com/456111385" target="_blank" rel="noopener noreferrer">童聪</a> · <a href="https://www.bilibili.com/video/BV1vdr5BiE5j/" target="_blank" rel="noopener noreferrer">查看来源</a></figcaption></figure></article>
+    <section id="knowledge" class="page content-layout" aria-labelledby="knowledge-title">
+      <aside class="knowledge-tree"><h2>百科目录</h2><button class="tree-item active" data-article="energy">养成策略 <span>›</span></button><button class="tree-child active" data-article="energy">心力消耗策略</button><button class="tree-child" data-article="shop">每周商店必买</button><button class="tree-child" data-article="craft">天工知识</button></aside>
+      <article id="knowledge-article" class="article-content"><p class="eyebrow">养成策略</p><h1 id="knowledge-title">心力消耗策略</h1><p>心力溢出会造成资源浪费，建议优先安排消耗心力的玩法。以下为原始知识图。</p><figure><img src="assets/百科查阅/养成策略/心力消耗策略.png" alt="心力消耗策略知识图" loading="lazy"><figcaption>作者：<a href="https://space.bilibili.com/456111385" target="_blank" rel="noopener noreferrer">童聪</a> · <a href="https://www.bilibili.com/video/BV1vdr5BiE5j/" target="_blank" rel="noopener noreferrer">查看来源</a></figcaption></figure></article>
     </section>
   </main>
 
   <footer>Unofficial fan-made guide. Where Winds Meet and related game assets are property of NetEase/Everstone Studio. This site is not affiliated with or endorsed by NetEase.</footer>
-  <script src="data/activities.js?v=20260903-2"></script>
+  <script src="data/activities.js?v=20260904"></script>
   <script src="data/limited-events.js?v=20260903-2"></script>
-  <script src="app.js?v=20260903-2"></script>
+  <script src="app.js?v=20260904"></script>
 </body>
 </html>
