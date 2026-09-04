@@ -8,7 +8,7 @@
 
 ## 数据维护
 
-源资料来自 `../raw-data/WWM Daily_Weekly_Monthly.xlsx`。网站活动数据位于 `data/activities.js`，与 HTML 展示逻辑分离。更新工作簿后需同步转换该数据文件。
+周期活动源资料来自 `../raw-data/WWM Daily_Weekly_Monthly.xlsx`，网站数据位于 `data/activities.js`。限时活动源资料来自 `../raw-data/WWM Limited Time Events.xlsx`，网站数据位于 `data/limited-events.json`。两者均与 HTML 展示逻辑分离，更新工作簿后需同步转换对应数据文件。
 
 用户完成状态保存在浏览器 `localStorage`，并按北京时间在每日 05:00、每周一 05:00、每月 1 日 05:00 自动切换到新的清单周期。
 

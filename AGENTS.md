@@ -20,9 +20,11 @@
 
 ## Sources of truth
 - `raw-data/WWM Daily_Weekly_Monthly.xlsx`: Activity checklist in Excel format maintained by the owner.
+- `raw-data/WWM Limited Time Events.xlsx`: Limited time activity checklist in Excel format maintained by the owner, each with event expiration datetime and completion status reset rule.
 - `wwm-knowledge-site/docs/requirements.md`: Product behavior and UX requirements. 
 - `wwm-knowledge-site/docs/technical_spec.md`: Technical requirements.
 - `wwm-knowledge-site/docs/credits.md`: Provides the map from asset to credit to author URL, author name and source of the screenshot.
+- `wwm-knowledge-site/pages`: Pages created in .doc, .pdf or other formats are here. They should be converted into website pages under one of the root menu according to their folder.
 
 ## Generated files location
 - `wwm-knowledge-site/assets`: If there are any assets such as PNG files that are sourced from `raw-data`, put them here.

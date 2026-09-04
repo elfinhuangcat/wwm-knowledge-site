@@ -1,7 +1,15 @@
 # Technical Specifications
 Each following section describe main feature's specification.
 ## 日课周修 specifications
-- They should be displayed in the same page as 2 tabular checklist (weekly and monthly combined into one). They should be sortable/filterable tables with check mark enabled for users to check an activity as completed for today / this week / this month.
+- They should be displayed in the same page as 3 tabular checklist. They should be sortable/filterable tables with check mark enabled for users to check an activity as completed for today / this week / this month.
+  - 3 Tabular checklist:
+    - Limited time events
+    - Daily
+    - Weekly & monthly
+- For limited time activities:
+  - Their completion status reset rule is in the column "Completion Status Reset".
+  - Please have a new column called "截止日期" and the expiration date of the event should be highlighted in this column.
+  - The owner will maintain the source data, but if the owner forget to remove a limited time activity row after its expiration datetime, the website should hide it.
 - Users should be able to sort the table by Goals:
   - Goals:
     - 角色养成

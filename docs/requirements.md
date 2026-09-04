@@ -12,7 +12,7 @@ This project aims to produce a static website that can be easily hosted in Githu
 
 In this section we will list desired main features for the website. 
 - "日课周修" (Checklist)
-  - These are monthly/weekly/daily activities checklist.
+  - These are monthly/weekly/daily activities checklist, as well as limited time events.
   - Users can prioritize activities according to different goals:
     - 角色养成 (both needed for PVE and PVP)
     - PVP养成

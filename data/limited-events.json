@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "generatedFrom": "raw-data/WWM Limited Time Events.xlsx",
+  "timezone": "Asia/Shanghai",
+  "events": [
+    {
+      "id": "limited-2026-september-twitch-drop",
+      "expirationDate": "2026-09-14T21:00:00Z",
+      "completionReset": { "type": "once", "at": "2026-09-14T21:00:00Z" },
+      "name": "2026 September Twitch Drop",
+      "category": "限时活动",
+      "priority": { "role": "低", "pve": "低", "pvp": "低", "cosmetic": "低" },
+      "time": "高 (240 minutes)",
+      "rewards": "心法箱子，通宝",
+      "guide": "前往官方 Twitch Drops 页面参与",
+      "notes": "",
+      "link": "https://www.wherewindsmeetgame.com/twitchdrops/"
+    },
+    {
+      "id": "limited-shana-xinghua",
+      "expirationDate": "2026-09-08T20:39:52Z",
+      "completionReset": { "type": "daily", "hour": 5, "timezone": "Asia/Shanghai" },
+      "name": "刹那星华",
+      "category": "限时活动",
+      "priority": { "role": "低", "pve": "低", "pvp": "低", "cosmetic": "低" },
+      "time": "极低（< 1min)",
+      "rewards": "通宝",
+      "guide": "每日点赞万象集，不要错过",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "limited-zhaoying-temple",
+      "expirationDate": "2026-09-15T20:39:37Z",
+      "completionReset": { "type": "once", "at": "2026-09-26T19:00:00Z" },
+      "name": "照影庙",
+      "category": "限时活动",
+      "priority": { "role": "高", "pve": "高", "pvp": "高", "cosmetic": "低" },
+      "time": "高 (60 mins)",
+      "rewards": "心法箱子，传律石，乌金铁，变音石",
+      "guide": "",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "limited-fuyan-youling",
+      "expirationDate": "2026-10-27T09:40:31Z",
+      "completionReset": { "type": "once", "at": "2026-11-07T08:00:00Z" },
+      "name": "赋燕有灵",
+      "category": "限时活动",
+      "priority": { "role": "高", "pve": "高", "pvp": "高", "cosmetic": "高" },
+      "time": "极低（< 1min)",
+      "rewards": "长鸣玉",
+      "guide": "复制分享口令即可",
+      "notes": "",
+      "link": ""
+    },
+    {
+      "id": "limited-jianghu-bounty",
+      "expirationDate": "2026-09-15T20:39:37Z",
+      "completionReset": { "type": "weekly", "weekday": 1, "hour": 5, "timezone": "Asia/Shanghai" },
+      "name": "江湖悬赏令",
+      "category": "限时活动",
+      "priority": { "role": "高", "pve": "高", "pvp": "高", "cosmetic": "高" },
+      "time": "中（10min ~ 20min)",
+      "rewards": "心法箱子，传律石，乌金铁，变音石，袅袅之音",
+      "guide": "完成任何类型悬赏攒足够四方钱，发布任何类型悬赏3次",
+      "notes": "最快最稳定发布悬赏方法：皇宫“福宁殿”传送点附近偷听获得大耳朵病，发布治病悬赏",
+      "link": ""
+    }
+  ]
+}
