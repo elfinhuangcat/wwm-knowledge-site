@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#176b5b">
   <title>燕云行笺 · 玩家知识站</title>
   <link rel="icon" type="image/png" href="assets/cat-goose-logo.png">
-  <link rel="stylesheet" href="styles.css?v=20260904">
+  <link rel="stylesheet" href="styles.css?v=20260904-4">
 </head>
 <body>
   <header class="site-header">
@@ -46,9 +46,9 @@
       <p id="empty-state" class="empty" hidden>没有符合当前筛选条件的活动。</p>
     </section>
 
-    <section id="must-do" class="page content-layout" aria-labelledby="must-title">
-      <aside class="knowledge-tree"><h2>不可错过目录</h2><button class="tree-item active" data-must-article="hexi-glass">河西奇珍 <span>›</span></button><button class="tree-child active" data-must-article="hexi-glass">五色琉璃彩</button></aside>
-      <article id="must-article" class="article-content">
+    <section id="must-do" class="page content-layout" aria-label="不可错过">
+      <aside class="knowledge-tree"><h2>不可错过目录</h2><div class="tree-item active">重要指南 <span>›</span></div><button class="tree-child active" data-must-article="hexi-glass">五色琉璃彩</button><button class="tree-child" data-must-article="merchants">你一定需要知道的商人们</button></aside>
+      <article id="must-article" class="article-content active" data-must-panel="hexi-glass">
         <p class="eyebrow">河西奇珍</p><h1 id="must-title">河西五色琉璃彩</h1>
         <p class="reward-callout"><strong>主要奖励：</strong>10个心法书页，需要200个五色琉璃彩兑换。</p>
         <h2>如何收集</h2><p>需要在河西玉门关地图白天，出现特定天气的条件下，地图会如下图出现这样的大型区域提示，这时候就可以过去采集啦。</p>
@@ -58,6 +58,22 @@
         <figure><img src="assets/不可错过/河西五色琉璃彩/image2.png" alt="胡杨集陈七七所在位置" loading="lazy"></figure>
         <p>可以兑换的物品如下图（心法箱子需要200个琉璃彩兑换完成）：</p>
         <figure><img src="assets/不可错过/河西五色琉璃彩/image3.png" alt="五色琉璃彩兑换物品列表" loading="lazy"></figure>
+      </article>
+      <article class="article-content" data-must-panel="merchants">
+        <p class="eyebrow">重要指南</p><h1>你一定需要知道的商人们</h1>
+        <p>本攻略介绍你需要知道的商人位置和他们卖的货品，有的商人不在地图标注，如果怕漏可以在地图标点一下。以下没有说明的话商人都是在黄色箭头位置。</p>
+        <nav class="article-toc bullet-toc" aria-label="商人指南章节"><strong>本页目录</strong><ul><li><button type="button" data-scroll-target="merchant-tangbao">清河不羡仙-唐宝</button></li><li><button type="button" data-scroll-target="merchant-tanglun">开封临津渡-唐纶</button></li><li><button type="button" data-scroll-target="merchant-zhaofeiyan">开封杂卖场-赵飞烟私库</button></li><li><button type="button" data-scroll-target="merchant-aba">河西玉门关城前隘-阿巴的淘金铺</button></li><li><button type="button" data-scroll-target="merchant-chenqiqi">河西玉门关胡杨集-陈七七</button></li><li><button type="button" data-scroll-target="merchant-canlang">河西凉州镇天水集-蚕郎的杂货摊</button></li><li><button type="button" data-scroll-target="merchant-sunmengliang">河西凉州镇天水集-孙孟梁的杂货摊</button></li><li><button type="button" data-scroll-target="merchant-ling">不见山墨守亭-鲮货郎</button></li><li><button type="button" data-scroll-target="merchant-ouxi">不见山隐峪-隐峪小店欧息</button></li><li><button type="button" data-scroll-target="merchant-linlang">不见山易墨坊-琳琅小店</button></li></ul></nav>
+        <p id="merchant-zoom-hint" class="zoom-hint">⌕ 所有图片均可双击放大；也可聚焦图片后按 Enter 查看原图。</p>
+        <section class="merchant-entry" id="merchant-tangbao"><h2>清河不羡仙-唐宝</h2><p>唐宝是你解锁重要心法“易水歌”的方式，绝对不能错过。</p><div class="merchant-gallery"><img src="assets/不可错过/商人指南/image2.png" alt="清河不羡仙唐宝地图位置" loading="lazy"><img src="assets/不可错过/商人指南/image1.png" alt="唐宝所在位置" loading="lazy"><img src="assets/不可错过/商人指南/image10.png" alt="唐宝商店货品" loading="lazy"></div></section>
+        <section class="merchant-entry" id="merchant-tanglun"><h2>开封临津渡-唐纶</h2><p>唐纶卖很多你需要的心法书页，千万别错过。早期就靠他升级心法了。</p><div class="merchant-gallery"><img src="assets/不可错过/商人指南/image24.png" alt="开封临津渡唐纶地图位置" loading="lazy"><img src="assets/不可错过/商人指南/image3.png" alt="唐纶所在位置" loading="lazy"><img src="assets/不可错过/商人指南/image18.png" alt="唐纶商店货品" loading="lazy"></div></section>
+        <section class="merchant-entry" id="merchant-zhaofeiyan"><h2>开封杂卖场-赵飞烟私库</h2><p>位置在开封皇宫北边，杂卖场界碑东北方向，下图商店图标的位置。需要潜入进去和赵飞烟对话后解锁。可以在他这里用通宝兑换心法箱子，袅袅之音。</p><div class="merchant-gallery"><img src="assets/不可错过/商人指南/image6.png" alt="赵飞烟私库地图位置" loading="lazy"><img src="assets/不可错过/商人指南/image4.png" alt="赵飞烟私库入口" loading="lazy"><img src="assets/不可错过/商人指南/image33.png" alt="赵飞烟私库货品" loading="lazy"></div></section>
+        <section class="merchant-entry" id="merchant-aba"><h2>河西玉门关城前隘-阿巴的淘金铺</h2><p>阿巴就在城前隘的传送点附近，地图商店图标的位置。她有81阶，86阶，91阶的转律石和变音石，以及破竹尘流派的部分心法书页售卖。</p><div class="merchant-gallery"><img src="assets/不可错过/商人指南/image27.png" alt="阿巴的淘金铺地图位置" loading="lazy"><img src="assets/不可错过/商人指南/image5.png" alt="阿巴所在位置" loading="lazy"><img src="assets/不可错过/商人指南/image7.png" alt="阿巴的淘金铺货品一" loading="lazy"><img src="assets/不可错过/商人指南/image12.png" alt="阿巴的淘金铺货品二" loading="lazy"></div></section>
+        <section class="merchant-entry" id="merchant-chenqiqi"><h2>河西玉门关胡杨集-陈七七</h2><p>这是个隐藏商人，陈七七需要五色琉璃彩。五色琉璃彩的采集方式可以参看本站<a href="#must-do/hexi-glass">五色琉璃彩的攻略</a>。陈七七位置在胡杨集传送点东北方向，下图黑色图标位置。可以在附近一棵树上找到陈七七。这个商店可以兑换到20个心法箱子。</p><div class="merchant-gallery"><img src="assets/不可错过/商人指南/image28.png" alt="陈七七地图位置" loading="lazy"><img src="assets/不可错过/商人指南/image26.png" alt="陈七七所在的树" loading="lazy"><img src="assets/不可错过/商人指南/image23.png" alt="陈七七商店货品" loading="lazy"></div></section>
+        <section class="merchant-entry" id="merchant-canlang"><h2>河西凉州镇天水集-蚕郎的杂货摊</h2><p>蚕郎这里卖裂石钧和一些通用的心法书页。</p><div class="merchant-gallery"><img src="assets/不可错过/商人指南/image22.png" alt="蚕郎的杂货摊地图位置" loading="lazy"><img src="assets/不可错过/商人指南/image20.png" alt="蚕郎所在位置" loading="lazy"><img src="assets/不可错过/商人指南/image17.png" alt="蚕郎的杂货摊货品" loading="lazy"></div></section>
+        <section class="merchant-entry" id="merchant-sunmengliang"><h2>河西凉州镇天水集-孙孟梁的杂货摊</h2><p>孙孟梁这里卖重要的增益食物配方（91阶），和建造的配方。</p><div class="merchant-gallery"><img src="assets/不可错过/商人指南/image11.png" alt="孙孟梁的杂货摊地图位置" loading="lazy"><img src="assets/不可错过/商人指南/image25.png" alt="孙孟梁所在位置" loading="lazy"><img src="assets/不可错过/商人指南/image29.png" alt="孙孟梁的杂货摊货品" loading="lazy"></div></section>
+        <section class="merchant-entry" id="merchant-ling"><h2>不见山墨守亭-鲮货郎</h2><p>鲮货郎可以在不见山墨守亭传送点的北边找到，是一个像自动贩卖机的装置。它贩卖96阶的转律石和变音石，破竹鸢流派的心法书页，以及一些不见山的采集物品。</p><div class="merchant-gallery"><img src="assets/不可错过/商人指南/image15.png" alt="鲮货郎地图位置" loading="lazy"><img src="assets/不可错过/商人指南/image30.png" alt="鲮货郎装置" loading="lazy"><img src="assets/不可错过/商人指南/image13.png" alt="鲮货郎货品" loading="lazy"></div></section>
+        <section class="merchant-entry" id="merchant-ouxi"><h2>不见山隐峪-隐峪小店欧息</h2><p>这是唯一一个藏在据点里面的小商店。先传送到隐峪界碑，然后顺着路往北杀进据点，可以在二层路的右侧方向找到一个非常小的山洞，里面有个坐着的人偶。</p><div class="merchant-gallery"><img src="assets/不可错过/商人指南/image19.png" alt="隐峪小店地图路线" loading="lazy"><img src="assets/不可错过/商人指南/image21.png" alt="隐峪据点路线" loading="lazy"><img src="assets/不可错过/商人指南/image16.png" alt="从隐峪小店人偶处向外看到的景色" loading="lazy"><img src="assets/不可错过/商人指南/image9.png" alt="隐峪小店货品" loading="lazy"></div><p class="image-note">（注：上图是人偶朝外看到的景色，如图所见，山洞在据点的二层，朝向一个可以看见瀑布的地方，一层是据点的中心。）</p></section>
+        <section class="merchant-entry" id="merchant-linlang"><h2>不见山易墨坊-琳琅小店</h2><p>这也是个隐藏商人，位置是不见山的易墨坊传送点，面向西南方向的小店就是（如下面地图所示箭头朝向）。里面有一只叫吉吉的猴子，可以用狩猎不见山“马猴”的各种掉落材料和它兑换心法箱子，袅袅之音，特殊外观等等。心法箱子的兑换材料“小棘轮”也可以通过加入墨山道解锁门派商店后用通宝兑换。</p><div class="merchant-gallery"><img src="assets/不可错过/商人指南/image8.png" alt="琳琅小店地图位置" loading="lazy"><img src="assets/不可错过/商人指南/image14.png" alt="琳琅小店外观" loading="lazy"><img src="assets/不可错过/商人指南/image31.png" alt="琳琅小店商人吉吉" loading="lazy"><img src="assets/不可错过/商人指南/image32.png" alt="琳琅小店货品" loading="lazy"></div></section>
       </article>
     </section>
     <section id="guild" class="page content-layout" aria-labelledby="guild-title">
@@ -89,14 +105,16 @@
       </div>
     </section>
     <section id="knowledge" class="page content-layout" aria-labelledby="knowledge-title">
-      <aside class="knowledge-tree"><h2>百科目录</h2><button class="tree-item active" data-article="energy">养成策略 <span>›</span></button><button class="tree-child active" data-article="energy">心力消耗策略</button><button class="tree-child" data-article="shop">每周商店必买</button><button class="tree-child" data-article="craft">天工知识</button></aside>
+      <aside class="knowledge-tree"><h2>百科目录</h2><button class="tree-item active" data-article="energy">养成策略 <span>›</span></button><button class="tree-child active" data-article="energy">心力消耗策略</button><button class="tree-child" data-article="shop">每周商店必买</button><button class="tree-child" data-article="craft">天工知识</button><div class="tree-item">护肝攻略 <span>›</span></div><button class="tree-child" data-article="fire-oil">单人世界采集火油方法</button></aside>
       <article id="knowledge-article" class="article-content"><p class="eyebrow">养成策略</p><h1 id="knowledge-title">心力消耗策略</h1><p>心力溢出会造成资源浪费，建议优先安排消耗心力的玩法。以下为原始知识图。</p><figure><img src="assets/百科查阅/养成策略/心力消耗策略.png" alt="心力消耗策略知识图" loading="lazy"><figcaption>作者：<a href="https://space.bilibili.com/456111385" target="_blank" rel="noopener noreferrer">童聪</a> · <a href="https://www.bilibili.com/video/BV1vdr5BiE5j/" target="_blank" rel="noopener noreferrer">查看来源</a></figcaption></figure></article>
     </section>
   </main>
 
+  <dialog id="image-lightbox" class="image-lightbox" aria-labelledby="lightbox-caption"><button type="button" class="lightbox-close" aria-label="关闭大图">×</button><img src="" alt=""><p id="lightbox-caption"></p></dialog>
+
   <footer>Unofficial fan-made guide. Where Winds Meet and related game assets are property of NetEase/Everstone Studio. This site is not affiliated with or endorsed by NetEase.</footer>
   <script src="data/activities.js?v=20260904"></script>
   <script src="data/limited-events.js?v=20260903-2"></script>
-  <script src="app.js?v=20260904"></script>
+  <script src="app.js?v=20260904-4"></script>
 </body>
 </html>
