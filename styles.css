@@ -47,3 +47,5 @@
 
 /* Market guide retains intrinsic image size, constrained to the article on mobile. */
 .market-guide img.market-original{display:block;width:auto;max-width:100%;height:auto;margin:16px 0}.market-guide img.market-announcement{display:block;width:320px;max-width:100%;height:auto;margin:12px 0;cursor:zoom-in;border-radius:7px}.market-announcement:focus-visible{outline:3px solid var(--jade);outline-offset:3px}.market-guide .guide-table p{margin:0;font-size:inherit}
+
+.market-guide h2,.market-guide h3{scroll-margin-top:92px}.market-image-link{display:block;width:fit-content;max-width:100%}.market-image-link:focus-visible{outline:3px solid var(--jade);outline-offset:3px}
