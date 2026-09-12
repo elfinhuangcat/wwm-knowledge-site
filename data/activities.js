@@ -44,4 +44,73 @@ window.WWM_ACTIVITIES = [
 ['Weekly','破军杀将','百业活动','低','低','低','低','是','低（5min以内）','千奇珏，宝铢','观战一次即可',''],
 ['Weekly','联机探索','百业活动','低','低','低','低','是','高（20min)','千奇珏，宝铢','实实在在联机20分钟，也可以挂机',''],
 ['Monthly','开封延长租期','赚短陌钱','低','低','低','低','否','极低（< 1min)','短陌钱','','']
-].map((r,i)=>{const links={'百业派对':'#guild/activity','参与百业战':'#guild/perks','百业货运':'#guild/activity','驻地停留':'#guild/activity','同游闲趣':'#guild/activity','一决高下':'#guild/activity','破军杀将':'#guild/activity','联机探索':'#guild/activity','赛季商店':'#knowledge/shop','战令商店':'#knowledge/shop','传承商店':'#knowledge/shop','江湖行商店':'#knowledge/shop'};return {id:`a${i+1}`,period:r[0],name:r[1],category:r[2],priority:{role:r[3],pve:r[4],pvp:r[5],cosmetic:r[6]},guild:r[7]==='是',time:r[8],rewards:r[9],guide:r[10],notes:r[11],link:links[r[1]]||''}});
+].map((r,i)=>{const links={'百业派对':'#guild/activity','参与百业战':'#guild/perks','百业货运':'#guild/activity','驻地停留':'#guild/activity','同游闲趣':'#guild/activity','一决高下':'#guild/activity','破军杀将':'#guild/activity','联机探索':'#guild/activity','赛季商店':'#knowledge/shop','战令商店':'#knowledge/shop','传承商店':'#knowledge/shop','江湖行商店':'#knowledge/shop','开封卖货':'#knowledge/market','开封延长租期':'#knowledge/market'};return {id:`a${i+1}`,period:r[0],name:r[1],category:r[2],priority:{role:r[3],pve:r[4],pvp:r[5],cosmetic:r[6]},guild:r[7]==='是',time:r[8],rewards:r[9],guide:r[10],notes:r[11],link:links[r[1]]||''}});
+
+window.WWM_ACTIVITIES.push(...[
+  {
+    "id": "a46",
+    "period": "Daily",
+    "name": "市买进货",
+    "category": "赚短陌钱",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "中"
+    },
+    "guild": true,
+    "time": "极低（< 1min)",
+    "rewards": "短陌钱",
+    "guide": "",
+    "notes": "",
+    "link": "#knowledge/market",
+    "visibility": {
+      "timezone": "Asia/Shanghai",
+      "windows": [
+        {
+          "start": {
+            "weekday": 6,
+            "time": "06:00"
+          },
+          "end": {
+            "weekday": 7,
+            "time": "06:00"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "a47",
+    "period": "Daily",
+    "name": "市买卖货",
+    "category": "赚短陌钱",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "中"
+    },
+    "guild": true,
+    "time": "中（10min)",
+    "rewards": "短陌钱",
+    "guide": "",
+    "notes": "",
+    "link": "#knowledge/market",
+    "visibility": {
+      "timezone": "Asia/Shanghai",
+      "windows": [
+        {
+          "start": {
+            "weekday": 3,
+            "time": "06:00"
+          },
+          "end": {
+            "weekday": 6,
+            "time": "06:00"
+          }
+        }
+      ]
+    }
+  }
+]);

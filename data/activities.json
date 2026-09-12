@@ -1,0 +1,878 @@
+[
+  {
+    "id": "a1",
+    "period": "Daily",
+    "name": "朝夕共赏（签到）",
+    "category": "快速日常",
+    "priority": {
+      "role": "高",
+      "pve": "高",
+      "pvp": "高",
+      "cosmetic": "高"
+    },
+    "guild": false,
+    "time": "极低（< 1min)",
+    "rewards": "心法箱子，乌金铁，折音券等",
+    "guide": "活动 → 朝夕共赏",
+    "notes": "",
+    "link": ""
+  },
+  {
+    "id": "a2",
+    "period": "Daily",
+    "name": "清心力",
+    "category": "玩游戏就为这",
+    "priority": {
+      "role": "高",
+      "pve": "高",
+      "pvp": "高",
+      "cosmetic": "低"
+    },
+    "guild": true,
+    "time": "中（10min ~ 20min)",
+    "rewards": "心法箱子，武学箱子，装备，乌金铁，装备残音，定音石，通宝，战令经验，角色经验等",
+    "guide": "试剑（5人本），镇守（单刷），据点挑战（单人世界），协力清缴（最多5人）",
+    "notes": "请查看百科「心力消耗策略」。心力溢出非常浪费，应优先消耗。",
+    "link": ""
+  },
+  {
+    "id": "a3",
+    "period": "Daily",
+    "name": "论剑/演武/群策/觉障林",
+    "category": "止戈",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "高",
+      "cosmetic": "中"
+    },
+    "guild": false,
+    "time": "不定，通常久",
+    "rewards": "止戈天赋，长鸣玉，通宝，四海笺，特殊外观，战令经验，角色经验",
+    "guide": "",
+    "notes": "",
+    "link": ""
+  },
+  {
+    "id": "a4",
+    "period": "Daily",
+    "name": "江湖号令",
+    "category": "快速日常",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "中"
+    },
+    "guild": false,
+    "time": "低（5min以内）",
+    "rewards": "战令经验，门派功绩",
+    "guide": "建议刷：东方第一枝话题、多人拍照、多人福地修炼、换装、编辑情境、演奏60个音符",
+    "notes": "",
+    "link": ""
+  },
+  {
+    "id": "a5",
+    "period": "Daily",
+    "name": "百业派对",
+    "category": "百业活动",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "低"
+    },
+    "guild": true,
+    "time": "中（10min）",
+    "rewards": "千奇珏",
+    "guide": "每周挂25min派对即可（约3天）",
+    "notes": "",
+    "link": "#guild/activity"
+  },
+  {
+    "id": "a6",
+    "period": "Daily",
+    "name": "报纸每日话题",
+    "category": "快速日常",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "低"
+    },
+    "guild": false,
+    "time": "极低（< 1min)",
+    "rewards": "江湖号令完成，角色经验，四海笺",
+    "guide": "",
+    "notes": "",
+    "link": ""
+  },
+  {
+    "id": "a7",
+    "period": "Daily",
+    "name": "采集资源",
+    "category": "肝",
+    "priority": {
+      "role": "中",
+      "pve": "中",
+      "pvp": "中",
+      "cosmetic": "低"
+    },
+    "guild": false,
+    "time": "不定，通常久",
+    "rewards": "天工材料/奇术升级材料/弓玦材料，么玉",
+    "guide": "",
+    "notes": "",
+    "link": ""
+  },
+  {
+    "id": "a8",
+    "period": "Daily",
+    "name": "消耗体力",
+    "category": "快速日常",
+    "priority": {
+      "role": "高",
+      "pve": "中",
+      "pvp": "中",
+      "cosmetic": "低"
+    },
+    "guild": false,
+    "time": "极低（< 1min)",
+    "rewards": "通宝",
+    "guide": "赛季商店换金丝钱袋（通宝），或制作需要的弓玦/药品等",
+    "notes": "",
+    "link": ""
+  },
+  {
+    "id": "a9",
+    "period": "Daily",
+    "name": "功德池许愿",
+    "category": "快速日常",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "低"
+    },
+    "guild": false,
+    "time": "极低（< 1min)",
+    "rewards": "锦鲤运，通宝",
+    "guide": "多人世界清河功德池，每日可许愿5次；锦鲤运可提高心法和装备箱出金机会",
+    "notes": "甚至可以摄星取月3次通宝",
+    "link": ""
+  },
+  {
+    "id": "a10",
+    "period": "Daily",
+    "name": "打理家业",
+    "category": "肝",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "高"
+    },
+    "guild": false,
+    "time": "中（10min ~ 20min)",
+    "rewards": "长鸣玉，金谷粒换家业外观，剧情",
+    "guide": "",
+    "notes": "没有强迫症可以不管",
+    "link": ""
+  },
+  {
+    "id": "a11",
+    "period": "Daily",
+    "name": "取悦伙伴（猫鹅）",
+    "category": "肝",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "高"
+    },
+    "guild": false,
+    "time": "中（10min ~ 20min)",
+    "rewards": "长鸣玉，绒团换伙伴外观",
+    "guide": "",
+    "notes": "没有强迫症可以不管",
+    "link": ""
+  },
+  {
+    "id": "a12",
+    "period": "Daily",
+    "name": "清河龙虎岭苦行僧",
+    "category": "肝",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "低"
+    },
+    "guild": false,
+    "time": "极低（< 1min)",
+    "rewards": "1长鸣玉",
+    "guide": "",
+    "notes": "没有强迫症可以不管",
+    "link": ""
+  },
+  {
+    "id": "a13",
+    "period": "Weekly",
+    "name": "浮景行舫",
+    "category": "挂机日常",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "低"
+    },
+    "guild": false,
+    "time": "高（15 ~ 30min)",
+    "rewards": "长鸣玉，四海笺，角色经验",
+    "guide": "一周4次，奖励下船前不要领，存在邮箱等需要时再开",
+    "notes": "",
+    "link": ""
+  },
+  {
+    "id": "a14",
+    "period": "Weekly",
+    "name": "伙伴 → 寻野行记",
+    "category": "肝",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "高"
+    },
+    "guild": false,
+    "time": "低（5min以内）",
+    "rewards": "绒团换伙伴外观",
+    "guide": "",
+    "notes": "每周约做3次，避免寻野值溢出。没有强迫症也可以不管",
+    "link": ""
+  },
+  {
+    "id": "a15",
+    "period": "Weekly",
+    "name": "赛季商店",
+    "category": "商店扫货",
+    "priority": {
+      "role": "高",
+      "pve": "高",
+      "pvp": "高",
+      "cosmetic": "高"
+    },
+    "guild": false,
+    "time": "低（5min以内）",
+    "rewards": "必买：心法箱子，武学书，金丝钱袋，装备，金装，转律石，金妙音石，叠音材料，营生手记",
+    "guide": "请看商店必买攻略",
+    "notes": "",
+    "link": "#knowledge/shop"
+  },
+  {
+    "id": "a16",
+    "period": "Weekly",
+    "name": "战令商店",
+    "category": "商店扫货",
+    "priority": {
+      "role": "高",
+      "pve": "高",
+      "pvp": "高",
+      "cosmetic": "高"
+    },
+    "guild": false,
+    "time": "低（5min以内）",
+    "rewards": "建议买：转律石，变音石，奇术箱",
+    "guide": "请看商店必买攻略",
+    "notes": "",
+    "link": "#knowledge/shop"
+  },
+  {
+    "id": "a17",
+    "period": "Weekly",
+    "name": "传承商店",
+    "category": "商店扫货",
+    "priority": {
+      "role": "高",
+      "pve": "高",
+      "pvp": "高",
+      "cosmetic": "高"
+    },
+    "guild": false,
+    "time": "低（5min以内）",
+    "rewards": "心法箱子，变音石，奇术箱",
+    "guide": "请看商店必买攻略",
+    "notes": "",
+    "link": "#knowledge/shop"
+  },
+  {
+    "id": "a18",
+    "period": "Weekly",
+    "name": "江湖行商店",
+    "category": "商店扫货",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "高",
+      "cosmetic": "高"
+    },
+    "guild": false,
+    "time": "极低（< 1min)",
+    "rewards": "止戈定音石，止戈变音石，免费外观",
+    "guide": "",
+    "notes": "",
+    "link": "#knowledge/shop"
+  },
+  {
+    "id": "a19",
+    "period": "Weekly",
+    "name": "侠境+百业侠境（双10）",
+    "category": "玩游戏就为这",
+    "priority": {
+      "role": "高",
+      "pve": "高",
+      "pvp": "高",
+      "cosmetic": "低"
+    },
+    "guild": true,
+    "time": "中（10min ~ 20min)",
+    "rewards": "心法箱子，装备，千奇珏",
+    "guide": "",
+    "notes": "",
+    "link": ""
+  },
+  {
+    "id": "a20",
+    "period": "Weekly",
+    "name": "心法心得置换",
+    "category": "必做周常",
+    "priority": {
+      "role": "高",
+      "pve": "高",
+      "pvp": "高",
+      "cosmetic": "低"
+    },
+    "guild": false,
+    "time": "低（5min以内）",
+    "rewards": "撕书页兑换600指定流派心法箱子",
+    "guide": "",
+    "notes": "",
+    "link": ""
+  },
+  {
+    "id": "a21",
+    "period": "Weekly",
+    "name": "大鹅切磋5次",
+    "category": "快速周常",
+    "priority": {
+      "role": "中",
+      "pve": "中",
+      "pvp": "中",
+      "cosmetic": "中"
+    },
+    "guild": false,
+    "time": "低（5min以内）",
+    "rewards": "每周5个心法箱子",
+    "guide": "",
+    "notes": "",
+    "link": ""
+  },
+  {
+    "id": "a22",
+    "period": "Weekly",
+    "name": "太平武墓-流派试炼",
+    "category": "玩游戏就为这",
+    "priority": {
+      "role": "高",
+      "pve": "高",
+      "pvp": "高",
+      "cosmetic": "高"
+    },
+    "guild": false,
+    "time": "中（10min ~ 20min)",
+    "rewards": "每期各种养成材料，悟道璞",
+    "guide": "",
+    "notes": "",
+    "link": ""
+  },
+  {
+    "id": "a23",
+    "period": "Weekly",
+    "name": "百业商店",
+    "category": "商店扫货",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "高"
+    },
+    "guild": false,
+    "time": "极低（< 1min)",
+    "rewards": "绕梁之音",
+    "guide": "",
+    "notes": "绕梁之音可以抽普通外观",
+    "link": ""
+  },
+  {
+    "id": "a24",
+    "period": "Weekly",
+    "name": "不错小店",
+    "category": "商店扫货",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "中"
+    },
+    "guild": false,
+    "time": "极低（< 1min)",
+    "rewards": "通宝，外观",
+    "guide": "",
+    "notes": "缺通宝可以买，通常换外观",
+    "link": ""
+  },
+  {
+    "id": "a25",
+    "period": "Weekly",
+    "name": "商店音",
+    "category": "攒袅袅之音",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "高"
+    },
+    "guild": false,
+    "time": "极低（< 1min)",
+    "rewards": "袅袅之音",
+    "guide": "商店 → 精选 → 道具 → 袅袅之音",
+    "notes": "",
+    "link": ""
+  },
+  {
+    "id": "a26",
+    "period": "Weekly",
+    "name": "赛季音",
+    "category": "攒袅袅之音",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "高"
+    },
+    "guild": false,
+    "time": "极低（< 1min)",
+    "rewards": "袅袅之音",
+    "guide": "赛季商店 → 外观",
+    "notes": "",
+    "link": ""
+  },
+  {
+    "id": "a27",
+    "period": "Weekly",
+    "name": "天精音",
+    "category": "攒袅袅之音",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "高"
+    },
+    "guild": false,
+    "time": "极低（< 1min)",
+    "rewards": "袅袅之音",
+    "guide": "和鸣商店 → 天精",
+    "notes": "",
+    "link": ""
+  },
+  {
+    "id": "a28",
+    "period": "Monthly",
+    "name": "地华音",
+    "category": "攒袅袅之音",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "高"
+    },
+    "guild": false,
+    "time": "极低（< 1min)",
+    "rewards": "袅袅之音",
+    "guide": "和鸣商店 → 地华",
+    "notes": "",
+    "link": ""
+  },
+  {
+    "id": "a29",
+    "period": "Monthly",
+    "name": "地华折音券",
+    "category": "氪外观",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "高"
+    },
+    "guild": false,
+    "time": "极低（< 1min)",
+    "rewards": "折音券",
+    "guide": "和鸣商店 → 地华",
+    "notes": "",
+    "link": ""
+  },
+  {
+    "id": "a30",
+    "period": "Weekly",
+    "name": "参与百业战",
+    "category": "百业活动",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "低"
+    },
+    "guild": true,
+    "time": "高（15 ~ 30min)",
+    "rewards": "长鸣玉，千奇珏",
+    "guide": "每周六周日美东8:00PM开始组队，上限30人，分排位赛和匹配赛",
+    "notes": "",
+    "link": "#guild/perks"
+  },
+  {
+    "id": "a31",
+    "period": "Weekly",
+    "name": "门派投票",
+    "category": "快速周常",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "中"
+    },
+    "guild": false,
+    "time": "极低（< 1min)",
+    "rewards": "门派功绩",
+    "guide": "",
+    "notes": "",
+    "link": ""
+  },
+  {
+    "id": "a32",
+    "period": "Weekly",
+    "name": "皇宫斗蛐蛐",
+    "category": "赚短陌钱",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "中"
+    },
+    "guild": true,
+    "time": "中（10min)",
+    "rewards": "短陌钱",
+    "guide": "",
+    "notes": "",
+    "link": ""
+  },
+  {
+    "id": "a33",
+    "period": "Weekly",
+    "name": "开封卖货",
+    "category": "赚短陌钱",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "中"
+    },
+    "guild": true,
+    "time": "中（10min)",
+    "rewards": "短陌钱",
+    "guide": "",
+    "notes": "",
+    "link": "#knowledge/market"
+  },
+  {
+    "id": "a34",
+    "period": "Weekly",
+    "name": "清河卖马",
+    "category": "赚短陌钱",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "中"
+    },
+    "guild": true,
+    "time": "低（5min以内）",
+    "rewards": "短陌钱",
+    "guide": "",
+    "notes": "",
+    "link": ""
+  },
+  {
+    "id": "a35",
+    "period": "Weekly",
+    "name": "家业 → 少东家的一天",
+    "category": "玩游戏就为这/肝？",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "高"
+    },
+    "guild": false,
+    "time": "中（10min ~ 20min)",
+    "rewards": "剧情，家业外观，长鸣玉",
+    "guide": "",
+    "notes": "",
+    "link": ""
+  },
+  {
+    "id": "a36",
+    "period": "Weekly",
+    "name": "家业 → 分配方案",
+    "category": "肝",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "高"
+    },
+    "guild": false,
+    "time": "中（10min)",
+    "rewards": "囤囤粟",
+    "guide": "",
+    "notes": "囤囤粟可提升家业等级，更容易获得金谷粒兑换外观",
+    "link": ""
+  },
+  {
+    "id": "a37",
+    "period": "Weekly",
+    "name": "伙伴 → 心愿",
+    "category": "快速周常",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "高"
+    },
+    "guild": false,
+    "time": "极低（< 1min)",
+    "rewards": "绒团换伙伴外观",
+    "guide": "",
+    "notes": "",
+    "link": ""
+  },
+  {
+    "id": "a38",
+    "period": "Weekly",
+    "name": "烟花晚会",
+    "category": "肝",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "低"
+    },
+    "guild": false,
+    "time": "高（约30min)",
+    "rewards": "律准石，染粉，振玉，极低概率袅袅之音/长鸣玉",
+    "guide": "江湖行 → 闲趣 → 烟花晚会（大概是美洲周六的凌晨和下午）",
+    "notes": "",
+    "link": ""
+  },
+  {
+    "id": "a39",
+    "period": "Weekly",
+    "name": "百业货运",
+    "category": "百业活动",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "低"
+    },
+    "guild": true,
+    "time": "极低（< 1min)",
+    "rewards": "千奇珏，宝铢，通宝",
+    "guide": "",
+    "notes": "",
+    "link": "#guild/activity"
+  },
+  {
+    "id": "a40",
+    "period": "Weekly",
+    "name": "驻地停留",
+    "category": "百业活动",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "低"
+    },
+    "guild": true,
+    "time": "高（20min)",
+    "rewards": "千奇珏，宝铢，通宝",
+    "guide": "可以参加派对顺便做完",
+    "notes": "",
+    "link": "#guild/activity"
+  },
+  {
+    "id": "a41",
+    "period": "Weekly",
+    "name": "同游闲趣",
+    "category": "百业活动",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "低"
+    },
+    "guild": true,
+    "time": "低（5min以内）",
+    "rewards": "千奇珏，宝铢",
+    "guide": "可以派对时和伙伴正经双修，5min能完成",
+    "notes": "",
+    "link": "#guild/activity"
+  },
+  {
+    "id": "a42",
+    "period": "Weekly",
+    "name": "一决高下",
+    "category": "百业活动",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "低"
+    },
+    "guild": true,
+    "time": "低（5min以内）",
+    "rewards": "千奇珏，宝铢",
+    "guide": "观战一次即可",
+    "notes": "",
+    "link": "#guild/activity"
+  },
+  {
+    "id": "a43",
+    "period": "Weekly",
+    "name": "破军杀将",
+    "category": "百业活动",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "低"
+    },
+    "guild": true,
+    "time": "低（5min以内）",
+    "rewards": "千奇珏，宝铢",
+    "guide": "观战一次即可",
+    "notes": "",
+    "link": "#guild/activity"
+  },
+  {
+    "id": "a44",
+    "period": "Weekly",
+    "name": "联机探索",
+    "category": "百业活动",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "低"
+    },
+    "guild": true,
+    "time": "高（20min)",
+    "rewards": "千奇珏，宝铢",
+    "guide": "实实在在联机20分钟，也可以挂机",
+    "notes": "",
+    "link": "#guild/activity"
+  },
+  {
+    "id": "a45",
+    "period": "Monthly",
+    "name": "开封延长租期",
+    "category": "赚短陌钱",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "低"
+    },
+    "guild": false,
+    "time": "极低（< 1min)",
+    "rewards": "短陌钱",
+    "guide": "",
+    "notes": "",
+    "link": "#knowledge/market"
+  },
+  {
+    "id": "a46",
+    "period": "Daily",
+    "name": "市买进货",
+    "category": "赚短陌钱",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "中"
+    },
+    "guild": true,
+    "time": "极低（< 1min)",
+    "rewards": "短陌钱",
+    "guide": "",
+    "notes": "",
+    "link": "#knowledge/market",
+    "visibility": {
+      "timezone": "Asia/Shanghai",
+      "windows": [
+        {
+          "start": {
+            "weekday": 6,
+            "time": "06:00"
+          },
+          "end": {
+            "weekday": 7,
+            "time": "06:00"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "a47",
+    "period": "Daily",
+    "name": "市买卖货",
+    "category": "赚短陌钱",
+    "priority": {
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "中"
+    },
+    "guild": true,
+    "time": "中（10min)",
+    "rewards": "短陌钱",
+    "guide": "",
+    "notes": "",
+    "link": "#knowledge/market",
+    "visibility": {
+      "timezone": "Asia/Shanghai",
+      "windows": [
+        {
+          "start": {
+            "weekday": 3,
+            "time": "06:00"
+          },
+          "end": {
+            "weekday": 6,
+            "time": "06:00"
+          }
+        }
+      ]
+    }
+  }
+]
