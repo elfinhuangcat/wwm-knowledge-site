@@ -1,6 +1,40 @@
 # Technical Specifications
+## Structure Specs
+`<lang>/<main-feature>/<page>/<sub-page>` should be the path pattern of each page. `<page>` and `<sub-page>` may not be defined for all features. By default index.html route to checklist page.
+
+- For example, a Simplified Chinese version of checklist (including limited-time, daily, weekly/monthly) path is: `zh-Hans/checklist` (we do not need subpage for this feature).
+- For example, an English version of 不可错过/河西五色琉璃彩 path is: `en/no-miss/hexi-glazed-tiles`.
+
+Here is the structure by layers (language not included), with example pages included:
+
+- `checklist.html` (日课周修)
+- `no-miss` （不可错过）
+  - hexi-glazed-tiles.html
+  - merchants.html
+- `guild` （百业101）
+  - activity-guide.html
+  - perk-guide.html
+- `wiki` (百科查阅)
+  - develop (养成攻略)
+    - divinecraft.html (天工知识)
+    - stores-must-buy.html (每周必买)
+    - energy-well-spent.html (心力消耗策略)
+  - farm (护肝攻略)
+    - fire-oil-farming.html
+    - mohist-blueprint.html
+  - jianghu (玩转江湖)
+    - trading-guide.html
+
+In the future, when adding any new page, the owner should be prompted to support page path name.
+## Language Specs
+- The website should be able to extend to multi-lang. 
+  - zh-Hans: Simplified Chinese. 
+  - zh-Hant: Traditional Chinese. We are not ready to support it.
+  - en: English. We are not ready to support it.
+
+## Feature Specs
 Each following section describe main feature's specification.
-## 日课周修 specifications
+### 日课周修 specifications
 - They should be displayed in the same page as 3 tabular checklist. They should be sortable/filterable tables with check mark enabled for users to check an activity as completed for today / this week / this month.
   - 3 Tabular checklist:
     - Limited time events

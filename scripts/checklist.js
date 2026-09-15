@@ -1,0 +1,49 @@
+(()=>{'use strict';
+const ui=window.WWM_MESSAGES.checklist;
+const activities=window.WWM_ACTIVITIES||[], $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)], limitedSource=window.WWM_LIMITED_EVENTS;let limitedEvents=limitedSource?.events?.map(a=>({...a,period:'Limited'}))||[],eventsLoaded=true,eventsLoadError=!limitedSource;
+const state={period:'Daily',goal:'role',priority:'all',search:'',hide:false,sort:'default',direction:1};
+const RANK={高:3,中:2,低:1}, TIME_RANK={'极低':1,'低':2,'中':3,'高':4,'不定，通常久':5};
+const bjParts=(d=new Date())=>Object.fromEntries(new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(d).filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));
+function effectiveDate(){const p=bjParts();return new Date(Date.UTC(+p.year,+p.month-1,+p.day,+p.hour-5))}
+function resetKey(period){const d=effectiveDate();if(period==='Daily')return d.toISOString().slice(0,10);if(period==='Monthly')return d.toISOString().slice(0,7);const since=(d.getUTCDay()-1+7)%7;return new Date(d.getTime()-since*864e5).toISOString().slice(0,10)}
+function storage(){try{return JSON.parse(localStorage.getItem('wwm-checklist-v1')||'{}')}catch{return {}}}
+function completionKey(a){if(a.period!=='Limited')return resetKey(a.period);const r=a.completionReset||{};if(r.type==='daily')return resetKey('Daily');if(r.type==='weekly')return resetKey('Weekly');if(r.type==='once'&&r.at)return `${Date.now()<Date.parse(r.at)?'before':'after'}:${r.at}`;return 'event'}
+function isDone(a){return !!storage()[`${a.period}:${completionKey(a)}:${a.id}`]}
+function setDone(a,v){const s=storage(),k=`${a.period}:${completionKey(a)}:${a.id}`;v?s[k]=true:delete s[k];localStorage.setItem('wwm-checklist-v1',JSON.stringify(s))}
+function currentPriority(a){return a.priority[state.goal]}
+function inPeriod(a){if(state.period==='Limited')return a.period==='Limited';return state.period==='Daily'?a.period==='Daily':a.period==='Weekly'||a.period==='Monthly'}
+function timeLevel(a){return a.time.startsWith('不定')?'不定，通常久':a.time.split(/（|\s*\(/)[0].trim()}
+function defaultCompare(a,b){return Number(isDone(a))-Number(isDone(b))||RANK[currentPriority(b)]-RANK[currentPriority(a)]||a.category.localeCompare(b.category,ui.locale)||a.name.localeCompare(b.name,ui.locale)}
+function compareActivities(a,b){if(state.sort==='default')return defaultCompare(a,b);let n=0;if(state.sort==='completion')n=Number(isDone(a))-Number(isDone(b));else if(state.sort==='priority')n=RANK[currentPriority(b)]-RANK[currentPriority(a)];else if(state.sort==='time')n=TIME_RANK[timeLevel(a)]-TIME_RANK[timeLevel(b)];else if(state.sort==='category')n=a.category.localeCompare(b.category,ui.locale);else n=a.name.localeCompare(b.name,ui.locale);return n*state.direction||defaultCompare(a,b)}
+function activeLimitedEvents(){return limitedEvents.filter(a=>Date.now()<Date.parse(a.expirationDate))}
+// Visibility uses calendar weekdays (ISO Monday=1), independently of completion resets.
+function isActivityVisible(a,now=new Date()){
+  if(!a.visibility)return true;
+  const p=Object.fromEntries(new Intl.DateTimeFormat('en-CA',{timeZone:a.visibility.timezone,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(now).filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));
+  const day=new Date(Date.UTC(+p.year,+p.month-1,+p.day)).getUTCDay()||7;
+  const minute=(day-1)*1440+(+p.hour)*60+(+p.minute);
+  const offset=point=>{const [h,m]=point.time.split(':').map(Number);return (point.weekday-1)*1440+h*60+m};
+  return a.visibility.windows.some(w=>{const start=offset(w.start),end=offset(w.end);return start<end?minute>=start&&minute<end:start>end&&(minute>=start||minute<end)});
+}
+function sourceActivities(){return state.period==='Limited'?activeLimitedEvents():activities.filter(a=>isActivityVisible(a))}
+function filtered(){return sourceActivities().filter(a=>inPeriod(a)&&(state.priority==='all'||currentPriority(a)===state.priority)&&(!state.hide||!isDone(a))&&(!state.search||a.rewards.toLowerCase().includes(state.search))).sort(compareActivities)}
+function escapeHtml(s){return String(s).replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]))}
+function nameHtml(a){const n=escapeHtml(a.name);return a.link?`<a href="${escapeHtml(window.WWM_SITE.resolveLink(a.link))}">${n}</a>`:n}
+function timeHtml(a){const l=escapeHtml(timeLevel(a)),n=escapeHtml(a.time.slice(timeLevel(a).length));return `<span class="time-level">${l}</span>${n?` <span class="time-note">${n}</span>`:''}`}
+function deadlineHtml(a){const ms=Date.parse(a.expirationDate)-Date.now(),days=Math.ceil(ms/864e5),level=days<=3?'urgent':days<=7?'soon':'';const text=new Intl.DateTimeFormat(ui.locale,{timeZone:'Asia/Shanghai',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(a.expirationDate));return `<div class="deadline ${level}"><strong>${text}</strong><small>${days<=1?ui.lessThanDay:ui.remainingDays(days)}</small></div>`}
+function sortMark(key){return state.sort===key?(state.direction===1?' ↑':' ↓'):' ↕'}
+function render(){const rows=filtered(),limited=state.period==='Limited',list=$('#activity-list');list.classList.toggle('limited',limited);list.innerHTML=`<div class="activity-head"><button data-sort="completion" aria-label="${ui.sortCompletion}">${ui.completed}${sortMark('completion')}</button><span>${ui.activity}</span><button data-sort="category" aria-label="${ui.sortCategory}">${ui.category}${sortMark('category')}</button><button data-sort="priority" aria-label="${ui.sortPriority}">${ui.priority}${sortMark('priority')}</button><span>${ui.rewards}</span><button data-sort="time" aria-label="${ui.sortTime}">${ui.time}${sortMark('time')}</button>${limited?`<span>${ui.deadline}</span>`:''}<span></span></div>`+rows.map(a=>`<div class="activity-row ${isDone(a)?'done':''}" data-id="${a.id}"><input class="check" type="checkbox" ${isDone(a)?'checked':''} aria-label="${escapeHtml(ui.markCompleted(a.name))}"><div><div class="activity-name">${nameHtml(a)}</div><div class="badges">${a.period==='Monthly'?`<span class="badge period-badge">${ui.monthly}</span>`:''}${a.guild?`<span class="badge guild">${ui.guild}</span>`:''}</div></div><div class="activity-category">${escapeHtml(a.category)}</div><div><span class="priority ${currentPriority(a)==='高'?'high':currentPriority(a)==='中'?'medium':'low'}">${currentPriority(a)}</span></div><div class="reward">${escapeHtml(a.rewards)}</div><div class="guide">${timeHtml(a)}</div>${limited?deadlineHtml(a):''}<button class="details" aria-label="${ui.details}" aria-expanded="false">⌄</button><div class="activity-detail"><p><strong>${ui.guide}</strong><br>${escapeHtml(a.guide||ui.none)}</p><p><strong>${ui.notes}</strong><br>${escapeHtml(a.notes||ui.none)}</p></div></div>`).join('');const empty=$('#empty-state');empty.textContent=limited&&!eventsLoaded?ui.loading:limited&&eventsLoadError?ui.loadError:ui.empty;empty.classList.toggle('load-error',limited&&eventsLoadError);empty.hidden=rows.length>0;updateProgress()}
+function group(p){if(p==='Limited')return activeLimitedEvents();return activities.filter(a=>isActivityVisible(a)&&(p==='Daily'?a.period==='Daily':a.period!=='Daily'))}
+function updateProgress(){const l=group('Limited'),d=group('Daily'),r=group('Recurring');$('#limited-count').textContent=`${l.filter(isDone).length}/${l.length}`;$('#daily-count').textContent=`${d.filter(isDone).length}/${d.length}`;$('#recurring-count').textContent=`${r.filter(isDone).length}/${r.length}`;const all=group(state.period),done=all.filter(isDone).length;$('#progress-label').textContent=ui.progress[state.period];$('#progress-text').textContent=`${done} / ${all.length}`;$('#progress-bar').style.width=(all.length?done/all.length*100:0)+'%'}
+function clock(){const p=bjParts();$('#beijing-time').textContent=ui.beijingTime(p.hour,p.minute);$('#next-reset').textContent=ui.reset[state.period]}
+function defaultDirection(key){return key==='priority'?1:1}
+$('#activity-list').addEventListener('click',e=>{if(e.target.dataset.sort){const key=e.target.dataset.sort;state.direction=state.sort===key?-state.direction:defaultDirection(key);state.sort=key;render();return}const row=e.target.closest('.activity-row');if(!row)return;const a=[...activities,...limitedEvents].find(x=>x.id===row.dataset.id);if(e.target.matches('.check')){setDone(a,e.target.checked);render()}else if(e.target.matches('.details')){row.classList.toggle('expanded');e.target.setAttribute('aria-expanded',row.classList.contains('expanded'));e.target.textContent=row.classList.contains('expanded')?'⌃':'⌄'}});
+$$('.period-tabs button').forEach(b=>b.addEventListener('click',()=>{$$('.period-tabs button').forEach(x=>x.setAttribute('aria-selected','false'));b.setAttribute('aria-selected','true');state.period=b.dataset.period;render();clock()}));
+$('#goal-filter').addEventListener('change',e=>{state.goal=e.target.value;render()});
+$('#priority-filter').addEventListener('change',e=>{state.priority=e.target.value;render()});
+$('#search').addEventListener('input',e=>{state.search=e.target.value.trim().toLowerCase();$$('.quick-search button').forEach(b=>b.classList.toggle('active',b.textContent===e.target.value));render()});
+$('#hide-completed').addEventListener('change',e=>{state.hide=e.target.checked;render()});
+$$('.quick-search button').forEach(b=>b.addEventListener('click',()=>{$('#search').value=$('#search').value===b.textContent?'':b.textContent;state.search=$('#search').value.toLowerCase();$$('.quick-search button').forEach(x=>x.classList.toggle('active',x===b&&!!state.search));render()}));
+
+render();clock();setInterval(()=>{clock();render()},1000*60);document.addEventListener('visibilitychange',()=>{if(!document.hidden){clock();render()}});
+})();

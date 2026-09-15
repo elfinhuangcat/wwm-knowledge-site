@@ -87,7 +87,7 @@
     "rewards": "千奇珏",
     "guide": "每周挂25min派对即可（约3天）",
     "notes": "",
-    "link": "#guild/activity"
+    "link": "guild/activity-guide.html"
   },
   {
     "id": "a6",
@@ -267,7 +267,7 @@
     "rewards": "必买：心法箱子，武学书，金丝钱袋，装备，金装，转律石，金妙音石，叠音材料，营生手记",
     "guide": "请看商店必买攻略",
     "notes": "",
-    "link": "#knowledge/shop"
+    "link": "wiki/develop/stores-must-buy.html"
   },
   {
     "id": "a16",
@@ -285,7 +285,7 @@
     "rewards": "建议买：转律石，变音石，奇术箱",
     "guide": "请看商店必买攻略",
     "notes": "",
-    "link": "#knowledge/shop"
+    "link": "wiki/develop/stores-must-buy.html"
   },
   {
     "id": "a17",
@@ -303,7 +303,7 @@
     "rewards": "心法箱子，变音石，奇术箱",
     "guide": "请看商店必买攻略",
     "notes": "",
-    "link": "#knowledge/shop"
+    "link": "wiki/develop/stores-must-buy.html"
   },
   {
     "id": "a18",
@@ -321,7 +321,7 @@
     "rewards": "止戈定音石，止戈变音石，免费外观",
     "guide": "",
     "notes": "",
-    "link": "#knowledge/shop"
+    "link": "wiki/develop/stores-must-buy.html"
   },
   {
     "id": "a19",
@@ -537,7 +537,7 @@
     "rewards": "长鸣玉，千奇珏",
     "guide": "每周六周日美东8:00PM开始组队，上限30人，分排位赛和匹配赛",
     "notes": "",
-    "link": "#guild/perks"
+    "link": "guild/perk-guide.html"
   },
   {
     "id": "a31",
@@ -591,7 +591,7 @@
     "rewards": "短陌钱",
     "guide": "",
     "notes": "",
-    "link": "#knowledge/market"
+    "link": "wiki/jianghu/trading-guide.html"
   },
   {
     "id": "a34",
@@ -699,7 +699,7 @@
     "rewards": "千奇珏，宝铢，通宝",
     "guide": "",
     "notes": "",
-    "link": "#guild/activity"
+    "link": "guild/activity-guide.html"
   },
   {
     "id": "a40",
@@ -717,7 +717,7 @@
     "rewards": "千奇珏，宝铢，通宝",
     "guide": "可以参加派对顺便做完",
     "notes": "",
-    "link": "#guild/activity"
+    "link": "guild/activity-guide.html"
   },
   {
     "id": "a41",
@@ -735,7 +735,7 @@
     "rewards": "千奇珏，宝铢",
     "guide": "可以派对时和伙伴正经双修，5min能完成",
     "notes": "",
-    "link": "#guild/activity"
+    "link": "guild/activity-guide.html"
   },
   {
     "id": "a42",
@@ -753,7 +753,7 @@
     "rewards": "千奇珏，宝铢",
     "guide": "观战一次即可",
     "notes": "",
-    "link": "#guild/activity"
+    "link": "guild/activity-guide.html"
   },
   {
     "id": "a43",
@@ -771,7 +771,7 @@
     "rewards": "千奇珏，宝铢",
     "guide": "观战一次即可",
     "notes": "",
-    "link": "#guild/activity"
+    "link": "guild/activity-guide.html"
   },
   {
     "id": "a44",
@@ -789,7 +789,7 @@
     "rewards": "千奇珏，宝铢",
     "guide": "实实在在联机20分钟，也可以挂机",
     "notes": "",
-    "link": "#guild/activity"
+    "link": "guild/activity-guide.html"
   },
   {
     "id": "a45",
@@ -807,7 +807,7 @@
     "rewards": "短陌钱",
     "guide": "",
     "notes": "",
-    "link": "#knowledge/market"
+    "link": "wiki/jianghu/trading-guide.html"
   },
   {
     "id": "a46",
@@ -825,7 +825,7 @@
     "rewards": "短陌钱",
     "guide": "",
     "notes": "",
-    "link": "#knowledge/market",
+    "link": "wiki/jianghu/trading-guide.html",
     "visibility": {
       "timezone": "Asia/Shanghai",
       "windows": [
@@ -858,7 +858,7 @@
     "rewards": "短陌钱",
     "guide": "",
     "notes": "",
-    "link": "#knowledge/market",
+    "link": "wiki/jianghu/trading-guide.html",
     "visibility": {
       "timezone": "Asia/Shanghai",
       "windows": [

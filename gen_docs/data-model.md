@@ -9,7 +9,7 @@
 - `name`, `category`, `time`, `rewards`, `guide`, `notes`: display strings.
 - `priority`: object containing `role`, `pve`, `pvp`, and `cosmetic` priority values.
 - `guild`: whether the activity awards guild activity points.
-- `link`: optional activity-name destination.
+- `link`: optional activity-name destination. Internal destinations are relative to the current language folder (for example, `guild/activity-guide.html` or `wiki/jianghu/trading-guide.html`); external destinations remain full HTTPS URLs. The shared site script resolves internal links without losing the GitHub Pages repository prefix. Activity IDs and the completion-state storage schema are unchanged.
 - `visibility`: optional calendar-week availability, independent of `period` and its completion reset. Missing means always visible. Example:
   ```json
   {"timezone":"Asia/Shanghai","windows":[{"start":{"weekday":6,"time":"06:00"},"end":{"weekday":7,"time":"06:00"}}]}
