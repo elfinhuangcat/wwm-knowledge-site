@@ -1,6 +1,7 @@
 // Paths are relative to a language folder. Ask the owner for a path before adding a page.
 window.WWM_PAGES = {
   checklist: { path: 'checklist.html', feature: 'checklist', legacy: 'checklist' },
+  changelog: { path: 'changelog.html', feature: 'meta', legacy: 'changelog' },
   'hexi-glazed-tiles': { path: 'no-miss/hexi-glazed-tiles.html', feature: 'no-miss', legacy: 'must-do/hexi-glass' },
   merchants: { path: 'no-miss/merchants.html', feature: 'no-miss', legacy: 'must-do/merchants' },
   'activity-guide': { path: 'guild/activity-guide.html', feature: 'guild', legacy: 'guild/activity' },

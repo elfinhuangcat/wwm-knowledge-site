@@ -3,11 +3,12 @@ window.WWM_MESSAGES = {
   brand: '燕云行笺', subtitle: '玩家知识站', home: '燕云行笺首页',
   menu: '菜单', navigation: '主导航', directory: '目录', closeImage: '关闭大图',
   zoomClick: '点击放大查看', zoomDouble: '双击放大查看',
+  changeLog: '更新日志',
   disclaimer: 'Unofficial fan-made guide. Where Winds Meet and related game assets are property of NetEase/Everstone Studio. This site is not affiliated with or endorsed by NetEase.',
   features: { checklist: '日课周修', 'no-miss': '不可错过', guild: '百业101', wiki: '百科查阅' },
   categories: { develop: '养成攻略', farm: '护肝攻略', jianghu: '玩转江湖' },
   pages: {
-    checklist: '日课周修', 'hexi-glazed-tiles': '五色琉璃彩', merchants: '你一定需要知道的商人们',
+    checklist: '日课周修', changelog: '更新日志', 'hexi-glazed-tiles': '五色琉璃彩', merchants: '你一定需要知道的商人们',
     'activity-guide': '百业活跃度/千奇珏速刷指南', 'perk-guide': '百业技艺 - 加成攻略',
     divinecraft: '天工知识', 'stores-must-buy': '每周商店必买', 'energy-well-spent': '心力消耗策略',
     'fire-oil-farming': '单人世界采集火油方法', 'mohist-blueprint': '墨山道快速刷建造和图纸', 'trading-guide': '市买小攻略'

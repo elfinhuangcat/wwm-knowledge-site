@@ -28,10 +28,13 @@
       <img src="${new URL('assets/cat-goose-logo.png', root).href}" alt="" width="44" height="44">
       <span><strong>${escapeHtml(messages.brand)}</strong><small>${escapeHtml(messages.subtitle)}</small></span>
     </a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">${escapeHtml(messages.menu)}</button>
     <nav id="main-nav" aria-label="${escapeHtml(messages.navigation)}">${Object.entries(window.WWM_FEATURES).map(([feature, details]) =>
       `<a href="${pageUrl(details.defaultPage)}"${current.feature === feature ? ' class="active" aria-current="true"' : ''}>${escapeHtml(messages.features[feature])}</a>`
-    ).join('')}</nav>`;
+    ).join('')}</nav>
+    <div class="header-tools">
+      <a href="${pageUrl('changelog')}"${currentId === 'changelog' ? ' class="active" aria-current="page"' : ''}>${escapeHtml(messages.changeLog)}</a>
+    </div>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">${escapeHtml(messages.menu)}</button>`;
   const menu = header.querySelector('.menu-toggle');
   const navigation = header.querySelector('#main-nav');
   menu.addEventListener('click', () => {
