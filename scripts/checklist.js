@@ -4,10 +4,10 @@ const activities=window.WWM_ACTIVITIES||[], $=s=>document.querySelector(s), $$=s
 const state={period:'Daily',goal:'role',priority:'all',search:'',hide:false,sort:'default',direction:1};
 const RANK={高:3,中:2,低:1}, TIME_RANK={'极低':1,'低':2,'中':3,'高':4,'不定，通常久':5};
 const bjParts=(d=new Date())=>Object.fromEntries(new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(d).filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));
-function effectiveDate(){const p=bjParts();return new Date(Date.UTC(+p.year,+p.month-1,+p.day,+p.hour-5))}
-function resetKey(period){const d=effectiveDate();if(period==='Daily')return d.toISOString().slice(0,10);if(period==='Monthly')return d.toISOString().slice(0,7);const since=(d.getUTCDay()-1+7)%7;return new Date(d.getTime()-since*864e5).toISOString().slice(0,10)}
+function effectiveDate(hour=5){const p=bjParts();return new Date(Date.UTC(+p.year,+p.month-1,+p.day,+p.hour-hour))}
+function resetKey(period,hour=5){const d=effectiveDate(hour);if(period==='Daily')return d.toISOString().slice(0,10);if(period==='Monthly')return d.toISOString().slice(0,7);const since=(d.getUTCDay()-1+7)%7;return new Date(d.getTime()-since*864e5).toISOString().slice(0,10)}
 function storage(){try{return JSON.parse(localStorage.getItem('wwm-checklist-v1')||'{}')}catch{return {}}}
-function completionKey(a){if(a.period!=='Limited')return resetKey(a.period);const r=a.completionReset||{};if(r.type==='daily')return resetKey('Daily');if(r.type==='weekly')return resetKey('Weekly');if(r.type==='once'&&r.at)return `${Date.now()<Date.parse(r.at)?'before':'after'}:${r.at}`;return 'event'}
+function completionKey(a){if(a.period!=='Limited')return resetKey(a.period);const r=a.completionReset||{};if(r.type==='daily')return resetKey('Daily',r.hour??5);if(r.type==='weekly')return resetKey('Weekly',r.hour??5);if(r.type==='once'&&r.at)return `${Date.now()<Date.parse(r.at)?'before':'after'}:${r.at}`;return 'event'}
 function isDone(a){return !!storage()[`${a.period}:${completionKey(a)}:${a.id}`]}
 function setDone(a,v){const s=storage(),k=`${a.period}:${completionKey(a)}:${a.id}`;v?s[k]=true:delete s[k];localStorage.setItem('wwm-checklist-v1',JSON.stringify(s))}
 function currentPriority(a){return a.priority[state.goal]}
