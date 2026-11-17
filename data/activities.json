@@ -365,14 +365,14 @@
     "name": "大鹅切磋5次",
     "category": "快速周常",
     "priority": {
-      "role": "中",
-      "pve": "中",
-      "pvp": "中",
-      "cosmetic": "中"
+      "role": "低",
+      "pve": "低",
+      "pvp": "低",
+      "cosmetic": "低"
     },
     "guild": false,
     "time": "低（5min以内）",
-    "rewards": "每周5个心法箱子",
+    "rewards": "绒团换伙伴外观",
     "guide": "",
     "notes": "",
     "link": ""
