@@ -35,3 +35,9 @@ Keep `频率` for completion reset frequency (`Daily` for these two rows). Add `
   - `{ "type": "once", "at": "<ISO timestamp>" }`
 
 Completion state remains device-local under the existing `wwm-checklist-v1` localStorage key.
+
+## Localized display fields
+
+Recurring activities and limited-time events may carry a `translations` object keyed by locale. Each locale entry supplies display strings for `name`, `category`, `rewards`, `guide` and `notes`. It can also supply a localized `timeNote` such as `(within 5 min)`. The base display strings are Simplified Chinese and are the fallback for missing locales. Priorities and time levels keep their canonical values for sorting and filtering; the interface supplies their localized labels. IDs, links, deadlines, reset rules and completion storage keys are shared across languages.
+
+Limited-event English names and supplied guide text come from the event workbook. Reward names are sourced from the currency dictionary and the general dictionary, using the Simplified Chinese canonical term or nickname. The worksheet term `心法箱子` is treated as the colloquial form of the dictionary nickname `心法箱`. `data/limited-events.js` mirrors the JSON for static browser loading.

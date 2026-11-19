@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Checklist · Your little handbook for WWM.">
+  <meta name="theme-color" content="#176b5b">
+  <title>Checklist · 燕云行笺</title>
+  <link rel="icon" type="image/png" href="../../assets/cat-goose-logo.png">
+  <link rel="stylesheet" href="../../styles.css?v=20261119">
+  <script defer src="../../scripts/pages.js?v=20261119"></script>
+  <script defer src="../../scripts/locales/en.js?v=20261119-handbook"></script>
+  <script defer src="../../scripts/site.js?v=20261119-gen-pages"></script>
+  <script defer src="../../data/activities.js?v=20261119-en"></script>
+  <script defer src="../../data/limited-events.js?v=20261119-en"></script>
+  <script defer src="../../scripts/checklist.js?v=20261119-en"></script>
+</head>
+<body data-page="checklist">
+  <header class="site-header"><a class="brand" href="../en/checklist.html">燕云行笺 · Checklist</a></header>
+  <main>
+<section id="checklist" class="checklist-page" aria-labelledby="checklist-title">
+      <div class="page-heading">
+        <div><p class="eyebrow">Today in the Jianghu</p><h1 id="checklist-title">Checklist</h1><p>Prioritize activities by your progression goal. Your completion status is saved only on this device.</p></div>
+        <div class="reset-note"><span id="beijing-time">Beijing time</span><small id="next-reset">Calculating the next reset</small></div>
+      </div>
+
+      <div class="goal-control">
+        <div><span class="goal-label">Progression goal</span><span class="info-tip" tabindex="0" role="img" aria-label="Your goal determines the priorities shown and the sort order." data-tooltip="Your goal determines the priorities shown and the sort order.">?</span><small>Choose what you want to focus on now</small></div>
+        <select id="goal-filter" aria-label="Choose a progression goal"><option value="role">Character progression</option><option value="pvp">PvP progression</option><option value="cosmetic">Collect appearances</option></select>
+      </div>
+
+      <div class="toolbar" aria-label="Filters and search">
+        <label>Priority<select id="priority-filter"><option value="all">All</option><option value="高">High</option><option value="中">Medium</option><option value="低">Low</option></select></label>
+        <label class="search-label">Find rewards<input id="search" type="search" placeholder="Enter a reward name…"><span class="quick-search" aria-label="Common rewards"><button type="button" data-source-term="心法">Inner Way</button><button type="button" data-source-term="长鸣玉">Echo Jade</button><button type="button" data-source-term="装备">Gear</button><button type="button" data-source-term="通宝">Coin</button><button type="button" data-source-term="外观">Appearance</button><button type="button" data-source-term="袅袅之音">Lingering Melody</button><button type="button" data-source-term="武学">Martial Art</button><button type="button" data-source-term="奇术">Mystic Skill</button></span></label>
+        <label class="toggle"><input id="hide-completed" type="checkbox">Hide completed</label>
+      </div>
+
+      <div class="period-tabs" role="tablist" aria-label="Activity frequency">
+        <button role="tab" aria-selected="false" data-period="Limited">Limited-time events <span id="limited-count"></span></button>
+        <button role="tab" aria-selected="true" data-period="Daily">Daily <span id="daily-count"></span></button>
+        <button role="tab" aria-selected="false" data-period="Recurring">Weekly / Monthly <span id="recurring-count"></span></button>
+      </div>
+      <div class="progress-row"><div><strong id="progress-label">Today’s progress</strong><span id="progress-text"></span></div><div class="progress-track" aria-hidden="true"><i id="progress-bar"></i></div></div>
+      <div id="activity-list" class="activity-list" aria-live="polite"></div>
+      <p id="empty-state" class="empty" hidden>No activities match the current filters.</p>
+    </section>
+  </main>
+
+  <footer>Unofficial fan-made guide. Where Winds Meet and related game assets are property of NetEase/Everstone Studio. This site is not affiliated with or endorsed by NetEase.</footer>
+</body>
+</html>

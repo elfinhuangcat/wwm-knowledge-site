@@ -6,7 +6,7 @@
   const defaults = { 'must-do': 'hexi-glazed-tiles', guild: 'activity-guide', knowledge: 'energy-well-spent' };
   const id = Object.hasOwn(legacy, requested) ? legacy[requested]
     : Object.hasOwn(defaults, requested.split('/')[0]) ? defaults[requested.split('/')[0]] : 'checklist';
-  const destination = new URL(`zh-Hans/${window.WWM_PAGES[id].path}`, root);
+  const destination = new URL(`gen_pages/zh-Hans/${window.WWM_PAGES[id].path}`, root);
   destination.search = location.search;
   location.replace(destination.href);
 })();

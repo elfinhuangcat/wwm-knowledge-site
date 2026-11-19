@@ -1,7 +1,26 @@
 (()=>{'use strict';
 const ui=window.WWM_MESSAGES.checklist;
-const activities=window.WWM_ACTIVITIES||[], $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)], limitedSource=window.WWM_LIMITED_EVENTS;let limitedEvents=limitedSource?.events?.map(a=>({...a,period:'Limited'}))||[],eventsLoaded=true,eventsLoadError=!limitedSource;
-const state={period:'Daily',goal:'role',priority:'all',search:'',hide:false,sort:'default',direction:1};
+const language = window.WWM_MESSAGES.language;
+const limitedSource = window.WWM_LIMITED_EVENTS;
+const $ = selector => document.querySelector(selector);
+const $$ = selector => [...document.querySelectorAll(selector)];
+function localized(record) {
+  const translation = record.translations?.[language];
+  return {
+    ...record,
+    ...translation,
+    sourceRewards: record.rewards,
+    contentLanguage: translation ? language : 'zh-Hans'
+  };
+}
+const activities = (window.WWM_ACTIVITIES || []).map(localized);
+const limitedEvents = (limitedSource?.events || []).map(record => ({
+  ...localized(record),
+  period: 'Limited'
+}));
+const requestedPeriod = new URLSearchParams(location.search).get('period');
+const initialPeriod = ['Limited', 'Daily', 'Recurring'].includes(requestedPeriod) ? requestedPeriod : 'Daily';
+const state={period:initialPeriod,goal:'role',priority:'all',search:'',hide:false,sort:'default',direction:1};
 const RANK={高:3,中:2,低:1}, TIME_RANK={'极低':1,'低':2,'中':3,'高':4,'不定，通常久':5};
 const bjParts=(d=new Date())=>Object.fromEntries(new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(d).filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));
 function effectiveDate(hour=5){const p=bjParts();return new Date(Date.UTC(+p.year,+p.month-1,+p.day,+p.hour-hour))}
@@ -26,13 +45,26 @@ function isActivityVisible(a,now=new Date()){
   return a.visibility.windows.some(w=>{const start=offset(w.start),end=offset(w.end);return start<end?minute>=start&&minute<end:start>end&&(minute>=start||minute<end)});
 }
 function sourceActivities(){return state.period==='Limited'?activeLimitedEvents():activities.filter(a=>isActivityVisible(a))}
-function filtered(){return sourceActivities().filter(a=>inPeriod(a)&&(state.priority==='all'||currentPriority(a)===state.priority)&&(!state.hide||!isDone(a))&&(!state.search||a.rewards.toLowerCase().includes(state.search))).sort(compareActivities)}
+function matchesReward(activity) {
+  if (!state.search) return true;
+  const query = state.search;
+  const shortcut = $$('.quick-search button').find(button => button.textContent.toLowerCase() === query);
+  const sourceQuery = shortcut?.dataset.sourceTerm || query;
+  return activity.rewards.toLowerCase().includes(query) || activity.sourceRewards.toLowerCase().includes(sourceQuery);
+}
+function filtered(){return sourceActivities().filter(a=>inPeriod(a)&&(state.priority==='all'||currentPriority(a)===state.priority)&&(!state.hide||!isDone(a))&&matchesReward(a)).sort(compareActivities)}
 function escapeHtml(s){return String(s).replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]))}
 function nameHtml(a){const n=escapeHtml(a.name);return a.link?`<a href="${escapeHtml(window.WWM_SITE.resolveLink(a.link))}">${n}</a>`:n}
-function timeHtml(a){const l=escapeHtml(timeLevel(a)),n=escapeHtml(a.time.slice(timeLevel(a).length));return `<span class="time-level">${l}</span>${n?` <span class="time-note">${n}</span>`:''}`}
+function guideHtml(value) {
+  return value.split(/(https:\/\/[^\s,，、）)<>]+)/g).map((part, index) => {
+    const text = escapeHtml(part);
+    return index % 2 ? `<a href="${text}">${text}</a>` : text;
+  }).join('');
+}
+function timeHtml(a){const level=timeLevel(a),l=escapeHtml(ui.timeLevels?.[level]||level),n=escapeHtml(a.timeNote ?? a.time.slice(level.length));return `<span class="time-level">${l}</span>${n?` <span class="time-note">${n}</span>`:''}`}
 function deadlineHtml(a){const ms=Date.parse(a.expirationDate)-Date.now(),days=Math.ceil(ms/864e5),level=days<=3?'urgent':days<=7?'soon':'';const text=new Intl.DateTimeFormat(ui.locale,{timeZone:'Asia/Shanghai',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(a.expirationDate));return `<div class="deadline ${level}"><strong>${text}</strong><small>${days<=1?ui.lessThanDay:ui.remainingDays(days)}</small></div>`}
 function sortMark(key){return state.sort===key?(state.direction===1?' ↑':' ↓'):' ↕'}
-function render(){const rows=filtered(),limited=state.period==='Limited',list=$('#activity-list');list.classList.toggle('limited',limited);list.innerHTML=`<div class="activity-head"><button data-sort="completion" aria-label="${ui.sortCompletion}">${ui.completed}${sortMark('completion')}</button><span>${ui.activity}</span><button data-sort="category" aria-label="${ui.sortCategory}">${ui.category}${sortMark('category')}</button><button data-sort="priority" aria-label="${ui.sortPriority}">${ui.priority}${sortMark('priority')}</button><span>${ui.rewards}</span><button data-sort="time" aria-label="${ui.sortTime}">${ui.time}${sortMark('time')}</button>${limited?`<span>${ui.deadline}</span>`:''}<span></span></div>`+rows.map(a=>`<div class="activity-row ${isDone(a)?'done':''}" data-id="${a.id}"><input class="check" type="checkbox" ${isDone(a)?'checked':''} aria-label="${escapeHtml(ui.markCompleted(a.name))}"><div><div class="activity-name">${nameHtml(a)}</div><div class="badges">${a.period==='Monthly'?`<span class="badge period-badge">${ui.monthly}</span>`:''}${a.guild?`<span class="badge guild">${ui.guild}</span>`:''}</div></div><div class="activity-category">${escapeHtml(a.category)}</div><div><span class="priority ${currentPriority(a)==='高'?'high':currentPriority(a)==='中'?'medium':'low'}">${currentPriority(a)}</span></div><div class="reward">${escapeHtml(a.rewards)}</div><div class="guide">${timeHtml(a)}</div>${limited?deadlineHtml(a):''}<button class="details" aria-label="${ui.details}" aria-expanded="false">⌄</button><div class="activity-detail"><p><strong>${ui.guide}</strong><br>${escapeHtml(a.guide||ui.none)}</p><p><strong>${ui.notes}</strong><br>${escapeHtml(a.notes||ui.none)}</p></div></div>`).join('');const empty=$('#empty-state');empty.textContent=limited&&!eventsLoaded?ui.loading:limited&&eventsLoadError?ui.loadError:ui.empty;empty.classList.toggle('load-error',limited&&eventsLoadError);empty.hidden=rows.length>0;updateProgress()}
+function render(){const rows=filtered(),limited=state.period==='Limited',list=$('#activity-list');list.classList.toggle('limited',limited);list.innerHTML=`<div class="activity-head"><button data-sort="completion" aria-label="${ui.sortCompletion}">${ui.completed}${sortMark('completion')}</button><span>${ui.activity}</span><button data-sort="category" aria-label="${ui.sortCategory}">${ui.category}${sortMark('category')}</button><button data-sort="priority" aria-label="${ui.sortPriority}">${ui.priority}${sortMark('priority')}</button><span>${ui.rewards}</span><button data-sort="time" aria-label="${ui.sortTime}">${ui.time}${sortMark('time')}</button>${limited?`<span>${ui.deadline}</span>`:''}<span></span></div>`+rows.map(a=>`<div class="activity-row ${isDone(a)?'done':''}" data-id="${a.id}"><input class="check" type="checkbox" ${isDone(a)?'checked':''} aria-label="${escapeHtml(ui.markCompleted(a.name))}"><div><div class="activity-name" lang="${a.contentLanguage}">${nameHtml(a)}</div><div class="badges">${a.period==='Monthly'?`<span class="badge period-badge">${ui.monthly}</span>`:''}${a.guild?`<span class="badge guild">${ui.guild}</span>`:''}</div></div><div class="activity-category" lang="${a.contentLanguage}" data-label="${escapeHtml(ui.category)}">${escapeHtml(a.category)}</div><div><span class="priority ${currentPriority(a)==='高'?'high':currentPriority(a)==='中'?'medium':'low'}">${ui.priorities?.[currentPriority(a)]||currentPriority(a)}</span></div><div class="reward" lang="${a.contentLanguage}" data-label="${escapeHtml(ui.rewardLabel)}">${escapeHtml(a.rewards)}</div><div class="guide" data-label="${escapeHtml(ui.time)}">${timeHtml(a)}</div>${limited?deadlineHtml(a):''}<button class="details" aria-label="${ui.details}" aria-expanded="false">⌄</button><div class="activity-detail"><p><strong>${ui.guide}</strong><br>${a.guide?`<span lang="${a.contentLanguage}">${guideHtml(a.guide)}</span>`:escapeHtml(ui.none)}</p><p><strong>${ui.notes}</strong><br>${a.notes?`<span lang="${a.contentLanguage}">${escapeHtml(a.notes)}</span>`:escapeHtml(ui.none)}</p></div></div>`).join('');const empty=$('#empty-state');empty.textContent=limited&&!limitedSource?ui.loadError:ui.empty;empty.classList.toggle('load-error',limited&&!limitedSource);empty.hidden=rows.length>0;updateProgress()}
 function group(p){if(p==='Limited')return activeLimitedEvents();return activities.filter(a=>isActivityVisible(a)&&(p==='Daily'?a.period==='Daily':a.period!=='Daily'))}
 function updateProgress(){const l=group('Limited'),d=group('Daily'),r=group('Recurring');$('#limited-count').textContent=`${l.filter(isDone).length}/${l.length}`;$('#daily-count').textContent=`${d.filter(isDone).length}/${d.length}`;$('#recurring-count').textContent=`${r.filter(isDone).length}/${r.length}`;const all=group(state.period),done=all.filter(isDone).length;$('#progress-label').textContent=ui.progress[state.period];$('#progress-text').textContent=`${done} / ${all.length}`;$('#progress-bar').style.width=(all.length?done/all.length*100:0)+'%'}
 function clock(){const p=bjParts();$('#beijing-time').textContent=ui.beijingTime(p.hour,p.minute);$('#next-reset').textContent=ui.reset[state.period]}
@@ -45,5 +77,6 @@ $('#search').addEventListener('input',e=>{state.search=e.target.value.trim().toL
 $('#hide-completed').addEventListener('change',e=>{state.hide=e.target.checked;render()});
 $$('.quick-search button').forEach(b=>b.addEventListener('click',()=>{$('#search').value=$('#search').value===b.textContent?'':b.textContent;state.search=$('#search').value.toLowerCase();$$('.quick-search button').forEach(x=>x.classList.toggle('active',x===b&&!!state.search));render()}));
 
+$$('.period-tabs button').forEach(button=>button.setAttribute('aria-selected', String(button.dataset.period===state.period)));
 render();clock();setInterval(()=>{clock();render()},1000*60);document.addEventListener('visibilitychange',()=>{if(!document.hidden){clock();render()}});
 })();

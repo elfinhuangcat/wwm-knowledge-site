@@ -2,8 +2,9 @@
   'use strict';
   // Resolve from this script, not the current page depth or the domain root.
   const root = new URL('../', document.currentScript.src);
+  const pagesRoot = new URL('gen_pages/', root);
   const language = document.documentElement.lang;
-  const languageRoot = new URL(`${language}/`, root);
+  const languageRoot = new URL(`${language}/`, pagesRoot);
   const messages = window.WWM_MESSAGES;
   const pages = window.WWM_PAGES;
   const currentId = document.body.dataset.page;
@@ -11,7 +12,7 @@
   const escapeHtml = value => String(value).replace(/[&<>"']/g, char => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
   })[char]);
-  const pageUrl = id => new URL(pages[id].path, languageRoot).href;
+  const pageUrl = (id, locale = language) => new URL(`${locale}/${pages[id].path}`, pagesRoot).href;
   const resolveLink = link => {
     if (link.startsWith('#')) {
       const key = link.slice(1);
@@ -22,6 +23,9 @@
   };
   window.WWM_SITE = { pageUrl, resolveLink, escapeHtml };
 
+  const languageOptions = Object.entries(window.WWM_LANGUAGES).map(([code, label]) =>
+    `<option value="${code}" lang="${code}"${code === language ? ' selected' : ''}>${escapeHtml(label)}</option>`
+  ).join('');
   const header = document.querySelector('.site-header');
   header.innerHTML = `
     <a class="brand" href="${pageUrl('checklist')}" aria-label="${escapeHtml(messages.home)}">
@@ -33,8 +37,17 @@
     ).join('')}</nav>
     <div class="header-tools">
       <a href="${pageUrl('changelog')}"${currentId === 'changelog' ? ' class="active" aria-current="page"' : ''}>${escapeHtml(messages.changeLog)}</a>
+      <select id="site-language" aria-label="${escapeHtml(messages.languageLabel)}">${languageOptions}</select>
     </div>
     <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">${escapeHtml(messages.menu)}</button>`;
+  header.querySelector('#site-language').addEventListener('change', event => {
+    const destination = new URL(pageUrl(currentId, event.target.value));
+    destination.search = location.search;
+    destination.hash = location.hash;
+    const activeTab = document.querySelector('.period-tabs [aria-selected="true"]');
+    if (activeTab) destination.searchParams.set('period', activeTab.dataset.period);
+    location.href = destination.href;
+  });
   const menu = header.querySelector('.menu-toggle');
   const navigation = header.querySelector('#main-nav');
   menu.addEventListener('click', () => {

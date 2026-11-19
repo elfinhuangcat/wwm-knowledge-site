@@ -28,7 +28,17 @@ In this section we will list desired main features for the website.
   - Knolwedge base / encyclopedia to store the pages that can be linked from activities checklist to detail how to complete an activity, or explaining why certain reward should be prioritized etc.
   - The knowledge base should have categories, preferably displayed as tree structure in left panel.
 
-
+## Tranlation Requirements
+- The website should support zh-Hans(简体中文, Chinese Simplified),zh-Hant(繁體中文, Chinese Traditional) and en(English).
+- Users should be able to change displayed language in any page by a top-right drop-down menu with 3 selections: 简体中文, 繁體中文 and English.
+- Both `WWM_CurrencyDictionaryAndUsage.xlsx` and `WWM_Dictionary.xlsx` should be used for translation look-up.
+- zh-Hans (Chinese Simplified) should be used as the index to look up tranlation.
+  - In the `WWM_Dictionary.xlsx`, 1st column is the index. If a term cannot be found in 1st column, the 2nd column (nickname) can be used for look up.
+  - In the `WWM_CurrencyDictionaryAndUsage.xlsx`, 1st column is the index.
+- If no translation can be found from any dictionary:
+  - zh-Hant: Just simplified to traditional characters.
+  - English: Prompt if it looks like a term specific to Where Winds Meet (the game). Otherwise just use LLM translation.
+- If the page has credit to other authors, do not translate their names.
 ## Visual Design & UX
 The website should feel clean, lightweight, concise, and easy to scan.
 

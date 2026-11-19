@@ -20,7 +20,9 @@
 
 ## Sources of truth
 - `raw-data/WWM Daily_Weekly_Monthly.xlsx`: Activity checklist in Excel format maintained by the owner.
-- `raw-data/WWM Limited Time Events.xlsx`: Limited time activity checklist in Excel format maintained by the owner, each with event expiration datetime and completion status reset rule.
+- `raw-data/WWM Limited Time Events.xlsx`: Limited time activity checklist in Excel format maintained by the owner, each with event expiration datetime, completion status reset rule and English (en) translation.
+- `raw-data/WWM_CurrencyDictionaryAndUsage.xlsx`: Dictionary specifically for currency.
+- `raw-data/WWM_Dictionary.xlsx`: Dictionary for various terms in the game.
 - `wwm-knowledge-site/docs/requirements.md`: Product behavior and UX requirements. 
 - `wwm-knowledge-site/docs/technical_spec.md`: Technical requirements.
 - `wwm-knowledge-site/docs/credits.md`: Provides the map from asset to credit to author URL, author name and source of the screenshot.
@@ -33,8 +35,9 @@
 
 
 ## Working rules
+- We target to support 3 languages, Chinese Simplified (zh-Hans), Chinese Traditional (zh-Hant) and English (en). The data is mainly written in Chinese Simplified and translations can be found from `WWM_Dictionary.xlsx` or `WWM_CurrencyDictionaryAndUsage.xlsx` or the source data itself.
+- If there is missing translation for zh-Hant, it should be converted from zh-Hans. If there is missing translation for other languages, then it should prompt to notify the developer.
 - Generate a structured json from when instructed to parse the Excel activity sheet.
-- Only use the `raw-data/WWM Daily_Weekly_Monthly.xlsx` when the task instructs to use the Excel activity sheet to re-generate or insert new items into json data.
 - Do not mutate anything in `raw-data`.
 - Do not mutate anything in `wwm-knowledge-site/docs`.
 - For UI-only changes, do not inspect the workbook unless necessary.

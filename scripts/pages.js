@@ -21,8 +21,7 @@ window.WWM_FEATURES = {
   wiki: { defaultPage: 'energy-well-spent' }
 };
 
-// Enable a locale only after its pages and interface translations are ready.
-window.WWM_LANGUAGES = { 'zh-Hans': { enabled: true }, 'zh-Hant': { enabled: false }, en: { enabled: false } };
+window.WWM_LANGUAGES = { 'zh-Hans': '简体中文', 'zh-Hant': '繁體中文', en: 'English' };
 
 window.WWM_LEGACY_PAGES = Object.fromEntries(
   Object.entries(window.WWM_PAGES).map(([id, page]) => [page.legacy, id])

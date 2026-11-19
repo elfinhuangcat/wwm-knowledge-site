@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="日課周修 · 燕云十六聲玩家知識站。">
+  <meta name="theme-color" content="#176b5b">
+  <title>日課周修 · 燕云行笺</title>
+  <link rel="icon" type="image/png" href="../../assets/cat-goose-logo.png">
+  <link rel="stylesheet" href="../../styles.css?v=20261119">
+  <script defer src="../../scripts/pages.js?v=20261119"></script>
+  <script defer src="../../scripts/locales/zh-Hant.js?v=20261119-brand"></script>
+  <script defer src="../../scripts/site.js?v=20261119-gen-pages"></script>
+  <script defer src="../../data/activities.js?v=20261119"></script>
+  <script defer src="../../data/limited-events.js?v=20261119"></script>
+  <script defer src="../../scripts/checklist.js?v=20261119"></script>
+</head>
+<body data-page="checklist">
+  <header class="site-header"><a class="brand" href="../zh-Hant/checklist.html">燕云行笺 · 日課周修</a></header>
+  <main>
+<section id="checklist" class="checklist-page" aria-labelledby="checklist-title">
+      <div class="page-heading">
+        <div><p class="eyebrow">今日江湖備忘</p><h1 id="checklist-title">日課周修</h1><p>按你的養成目標排出優先順序，完成狀態僅保存在當前設備。</p></div>
+        <div class="reset-note"><span id="beijing-time">北京時間</span><small id="next-reset">正在計算下次重置</small></div>
+      </div>
+
+      <div class="goal-control">
+        <div><span class="goal-label">養成目標</span><span class="info-tip" tabindex="0" role="img" aria-label="優先級將按照所選養成目標顯示和排序" data-tooltip="優先級將按照所選養成目標顯示和排序">?</span><small>選擇你當前最關注的成長方向</small></div>
+        <select id="goal-filter" aria-label="選擇養成目標"><option value="role">角色養成</option><option value="pvp">PVP養成</option><option value="cosmetic">外觀收集</option></select>
+      </div>
+
+      <div class="toolbar" aria-label="篩選與搜索">
+        <label>優先級<select id="priority-filter"><option value="all">全部</option><option value="高">高</option><option value="中">中</option><option value="低">低</option></select></label>
+        <label class="search-label">想要的獎勵<input id="search" type="search" placeholder="輸入獎勵名稱…"><span class="quick-search" aria-label="常用獎勵"><button type="button">心法</button><button type="button">長鳴玉</button><button type="button">裝備</button><button type="button">通寶</button><button type="button">外觀</button><button type="button">裊裊之音</button><button type="button">武學</button><button type="button">奇術</button></span></label>
+        <label class="toggle"><input id="hide-completed" type="checkbox">隱藏已完成</label>
+      </div>
+
+      <div class="period-tabs" role="tablist" aria-label="活動頻度">
+        <button role="tab" aria-selected="false" data-period="Limited">限時活動 <span id="limited-count"></span></button>
+        <button role="tab" aria-selected="true" data-period="Daily">每日 <span id="daily-count"></span></button>
+        <button role="tab" aria-selected="false" data-period="Recurring">每周 / 每月 <span id="recurring-count"></span></button>
+      </div>
+      <div class="progress-row"><div><strong id="progress-label">今日進度</strong><span id="progress-text"></span></div><div class="progress-track" aria-hidden="true"><i id="progress-bar"></i></div></div>
+      <div id="activity-list" class="activity-list" aria-live="polite"></div>
+      <p id="empty-state" class="empty" hidden>沒有符合當前篩選條件的活動。</p>
+    </section>
+  </main>
+
+  <footer>Unofficial fan-made guide. Where Winds Meet and related game assets are property of NetEase/Everstone Studio. This site is not affiliated with or endorsed by NetEase.</footer>
+</body>
+</html>

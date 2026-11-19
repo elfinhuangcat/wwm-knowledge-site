@@ -22,7 +22,23 @@
       "rewards": "袅袅之音，绕梁之音",
       "guide": "尽量邀请2个好友，可以获得袅袅之音",
       "notes": "",
-      "link": "https://www.wherewindsmeetgame.com/jm/web/api/s/GcY62COu"
+      "link": "https://www.wherewindsmeetgame.com/jm/web/api/s/GcY62COu",
+      "translations": {
+        "zh-Hant": {
+          "name": "【滹沱更新】大鵝送不停",
+          "category": "網頁",
+          "rewards": "裊裊之音，繞梁之音",
+          "guide": "盡量邀請2個好友，可以獲得裊裊之音",
+          "notes": ""
+        },
+        "en": {
+          "name": "Events -> Recommended -> Goose Gifts Galore",
+          "category": "Website Event",
+          "rewards": "Lingering Melody, Resonating Melody",
+          "guide": "For the full rewards, use your generated link to invite two new or returning players.",
+          "notes": ""
+        }
+      }
     },
     {
       "id": "limited-hutuo-one-billion-photo",
@@ -44,7 +60,23 @@
       "rewards": "心法箱子，长鸣玉，袅袅之音，绕梁之音",
       "guide": "目前全服进度25%可领取",
       "notes": "",
-      "link": "https://www.wherewindsmeetgame.com/202609/zn/en/?pageKey=8e0cd3167e9f4e01"
+      "link": "https://www.wherewindsmeetgame.com/202609/zn/en/?pageKey=8e0cd3167e9f4e01",
+      "translations": {
+        "zh-Hant": {
+          "name": "【滹沱更新】風起江湖，一億同框",
+          "category": "網頁",
+          "rewards": "心法箱子，長鳴玉，裊裊之音，繞梁之音",
+          "guide": "目前全服進度25%可領取",
+          "notes": ""
+        },
+        "en": {
+          "name": "Events -> Recommended -> A Hundred Million Unite",
+          "category": "Website Event",
+          "rewards": "Inner Way Note: Chest, Echo Jade, Lingering Melody, Resonating Melody",
+          "guide": "You can now claim the reward for reaching 25% server-wide progress.",
+          "notes": ""
+        }
+      }
     },
     {
       "id": "limited-2026-december-twitch-drops",
@@ -63,9 +95,25 @@
       },
       "time": "高 (240 min)",
       "rewards": "心法箱子，通宝，绕梁之音",
-      "guide": "去这个网站设置twitch和游戏账号的关联（只需设置一次，以后每个月可以直接观看），然后开始观看：Link to https://www.twitch.tv/directory/category/where-winds-meet?filter=drops",
+      "guide": "去这个网站设置twitch和游戏账号的关联（https://www.wherewindsmeetgame.com/twitchdrops/, 只需设置一次，以后每个月可以直接观看），然后开始观看: https://www.twitch.tv/directory/category/where-winds-meet?filter=drops",
       "notes": "",
-      "link": "https://www.twitch.tv/directory/category/where-winds-meet?filter=drops"
+      "link": "https://www.twitch.tv/directory/category/where-winds-meet?filter=drops",
+      "translations": {
+        "zh-Hant": {
+          "name": "2026 December Twitch Drops",
+          "category": "Twitch",
+          "rewards": "心法箱子，通寶，繞梁之音",
+          "guide": "去這個網站設置twitch和游戲賬號的關聯（https://www.wherewindsmeetgame.com/twitchdrops/, 只需設置一次，以后每個月可以直接觀看），然后開始觀看: https://www.twitch.tv/directory/category/where-winds-meet?filter=drops",
+          "notes": ""
+        },
+        "en": {
+          "name": "2026 December Twitch Drops",
+          "category": "Twitch",
+          "rewards": "Inner Way Note: Chest, Coin, Resonating Melody",
+          "guide": "Link your Twitch and game accounts once at https://www.wherewindsmeetgame.com/twitchdrops/, then watch a Drops-enabled stream.",
+          "notes": ""
+        }
+      }
     },
     {
       "id": "limited-taoli-yankefu",
@@ -88,7 +136,23 @@
       "rewards": "心法箱子，袅袅之音，乌金铁，传律石，变音石，金妙音石，绕梁之音，活动限定外观",
       "guide": "注意每周可以获得2000上限花蕊织，可以在渡尘墟商店兑换每周的惊喜礼包（1000），其他奖励可以攒剩余的花蕊织兑换。可以参考攻略视频，如 B站搜索渡尘墟",
       "notes": "",
-      "link": ""
+      "link": "",
+      "translations": {
+        "zh-Hant": {
+          "name": "逃離燕科夫",
+          "category": "游戲內",
+          "rewards": "心法箱子，裊裊之音，烏金鐵，傳律石，變音石，金妙音石，繞梁之音，活動限定外觀",
+          "guide": "注意每周可以獲得2000上限花蕊織，可以在渡塵墟商店兌換每周的驚喜禮包（1000），其他獎勵可以攢剩余的花蕊織兌換。可以參考攻略視頻，如 B站搜索渡塵墟",
+          "notes": ""
+        },
+        "en": {
+          "name": "Escape from Wind-kov",
+          "category": "In-game Event",
+          "rewards": "Inner Way Note: Chest, Lingering Melody, Ebon Iron, Modulating Stone, Re-attunement Stone, Legendary Melodic Stone, Resonating Melody, Event-exclusive appearance",
+          "guide": "You can earn up to 2,000 Floral Weave per week. Consider spending 1,000 on the weekly Transdust Ruins Giftbox and saving the other 1,000 for other rewards. For video guides, search for Transdust Ruins on Bilibili.",
+          "notes": ""
+        }
+      }
     },
     {
       "id": "limited-anniversary-yizai-xiangfeng",
@@ -111,7 +175,23 @@
       "rewards": "心法箱子，转律石，变音石，乌金铁，枕中散，袅袅之音，绕梁之音",
       "guide": "注意完成周常任务和活动任务，可以在活动页面兑换丰富奖励",
       "notes": "",
-      "link": ""
+      "link": "",
+      "translations": {
+        "zh-Hant": {
+          "name": "【周年慶】一載相逢",
+          "category": "游戲內",
+          "rewards": "心法箱子，轉律石，變音石，烏金鐵，枕中散，裊裊之音，繞梁之音",
+          "guide": "注意完成周常任務和活動任務，可以在活動頁面兌換豐富獎勵",
+          "notes": ""
+        },
+        "en": {
+          "name": "Anniversary - A Year Encountered",
+          "category": "In-game Event",
+          "rewards": "Inner Way Note: Chest, Retuning Stone, Re-attunement Stone, Ebon Iron, Pillow Pill, Lingering Melody, Resonating Melody",
+          "guide": "Complete weekly and event tasks, then redeem rewards on the event page.",
+          "notes": ""
+        }
+      }
     },
     {
       "id": "limited-anniversary-xialu-zongxiangfeng",
@@ -134,7 +214,23 @@
       "rewards": "心法箱子，长鸣玉，袅袅之音",
       "guide": "不想拿排位模式奖励（主要是长鸣玉）的可以直接玩休闲模式；想顺便拿排位奖励的可以玩排位模式",
       "notes": "注意兑换积分奖励，以及“江湖棋遇”里面每个小剧情的奖励",
-      "link": ""
+      "link": "",
+      "translations": {
+        "zh-Hant": {
+          "name": "【周年慶】俠路總相逢（打馬棋）",
+          "category": "游戲內",
+          "rewards": "心法箱子，長鳴玉，裊裊之音",
+          "guide": "不想拿排位模式獎勵（主要是長鳴玉）的可以直接玩休閑模式；想順便拿排位獎勵的可以玩排位模式",
+          "notes": "注意兌換積分獎勵，以及“江湖棋遇”里面每個小劇情的獎勵"
+        },
+        "en": {
+          "name": "Anniversary - Blades&Bonds (Horse Racing Chess)",
+          "category": "In-game Event",
+          "rewards": "Inner Way Note: Chest, Echo Jade, Lingering Melody",
+          "guide": "Play Ranked if you want the extra Echo Jade rewards, or queue for Casual Mode if you only want the event rewards.",
+          "notes": "Don't miss the Points Reward (collected from any mode) and the Tales on Tiles rewards."
+        }
+      }
     },
     {
       "id": "limited-anniversary-yanxian-jiali",
@@ -155,7 +251,23 @@
       "rewards": "袅袅之音，绕梁之音",
       "guide": "每日登录领取",
       "notes": "这里不设置每日提示，因为游戏里会有红点。",
-      "link": ""
+      "link": "",
+      "translations": {
+        "zh-Hant": {
+          "name": "【周年慶】每日簽到-燕銜佳禮",
+          "category": "游戲內",
+          "rewards": "裊裊之音，繞梁之音",
+          "guide": "每日登錄領取",
+          "notes": "這里不設置每日提示，因為游戲里會有紅點。"
+        },
+        "en": {
+          "name": "Anniversary - Swallow's Offer",
+          "category": "In-game Event",
+          "rewards": "Lingering Melody, Resonating Melody",
+          "guide": "Log in each day to claim rewards.",
+          "notes": "The in-game red dot serves as the daily reminder."
+        }
+      }
     },
     {
       "id": "limited-youlan-guihua",
@@ -177,7 +289,61 @@
       "rewards": "通宝，律准石，乌金铁，长鸣玉",
       "guide": "记得领取每日登录进度奖励，并且尽量完成本期奖励，大概5天就可以全部领取完成",
       "notes": "可以顺便折扣优惠买特殊外观",
-      "link": ""
+      "link": "",
+      "translations": {
+        "zh-Hant": {
+          "name": "幽嵐詭畫",
+          "category": "游戲內",
+          "rewards": "通寶，律準石，烏金鐵，長鳴玉",
+          "guide": "記得領取每日登錄進度獎勵，并且盡量完成本期獎勵，大概5天就可以全部領取完成",
+          "notes": "可以順便折扣優惠買特殊外觀"
+        },
+        "en": {
+          "name": "Spectral Scroll",
+          "category": "In-game Event",
+          "rewards": "Coin, Tuning Stone, Ebon Iron, Echo Jade",
+          "guide": "Claim the daily login progress rewards and complete this round’s objectives. It takes about five days to claim all rewards.",
+          "notes": "You can also buy special appearances at a discount."
+        }
+      }
+    },
+    {
+      "id": "limited-mid-season-sprint-arena",
+      "expirationDate": "2026-11-27T19:20:34Z",
+      "completionReset": {
+        "type": "daily",
+        "hour": 0,
+        "timezone": "Asia/Shanghai"
+      },
+      "name": "季半冲刺",
+      "category": "游戏内",
+      "priority": {
+        "role": "高",
+        "pve": "高",
+        "pvp": "高",
+        "cosmetic": "高"
+      },
+      "time": "高 (> 30 min)",
+      "rewards": "心法箱子，长鸣玉，通宝，止戈定音石",
+      "guide": "",
+      "notes": "",
+      "link": "",
+      "translations": {
+        "zh-Hant": {
+          "name": "季半沖刺",
+          "category": "游戲內",
+          "rewards": "心法箱子，長鳴玉，通寶，止戈定音石",
+          "guide": "",
+          "notes": ""
+        },
+        "en": {
+          "name": "Mid-Season Sprint: Arena",
+          "category": "In-game Event",
+          "rewards": "Inner Way Note: Chest, Echo Jade, Coin, Arena Attunement Stone",
+          "guide": "",
+          "notes": ""
+        }
+      }
     }
   ]
 }
